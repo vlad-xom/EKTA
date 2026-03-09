@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <title>EKTA</title>
+</head>
+<body>
+    <div class="hero--section">
+        <header>
+            <div class="header--menu">
+                <div class="header--logo">
+                    <img src="img/logo-ekta.svg" alt="" class="logo">
+                </div>
+                <div class="header--rating">
+                    <div class="header--rating__badge badge--score">
+                        <span class="badge--score__value">4.8</span>
+                    </div>
+                
+                    <div class="header--rating__content content--info">
+                        <div class="content--info__stars stars--list">
+                            <span class="stars--list__item"><img src="img/stars.svg" alt=""></span>
+                            <span class="stars--list__item"><img src="img/stars.svg" alt=""></span>
+                            <span class="stars--list__item"><img src="img/stars.svg" alt=""></span>
+                            <span class="stars--list__item"><img src="img/stars.svg" alt=""></span>
+                            <span class="stars--list__item"><img src="img/stars.svg" alt=""></span>
+                        </div>
+                        <p class="content--info__text">
+                            Рейтинг на основі <br> 
+                            <strong class="content--info__count">2174 відгуків</strong>
+                        </p>
+                    </div>
+                </div>
+                <div class="header--contacts">
+                    <a href="tel:+380935731230" class="header--contacts__button button--call">
+                        <span class="button--call__dot"></span>
+                        Звоните 24/7
+                    </a>
+                
+                    <div class="header--contacts__phone phone--block" id="phoneClickArea" onclick="togglePhoneMenu()">
+                        <div class="phone--block__content">
+                            <img src="https://img.icons8.com/ios-filled/50/FFD700/phone.png" alt="phone" class="phone--block__icon">
+                            <span class="phone--block__number">+ 380 (93) 573 12 30</span>
+                            <span class="phone--block__arrow"><img src="img/arrow.svg" alt=""></span>
+                        </div>
+                    
+                        <div class="phone--block__dropdown dropdown--list" id="phoneDropdown">
+                            <a href="tel:+380935731230" class="dropdown--list__item">+ 380 (93) 573 12 30</a>
+                            <a href="tel:+13022461037" class="dropdown--list__item">+ 1 (302) 246-1037</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header--lang" id="langContainer">
+                    <div class="header--lang__current lang--current" onclick="toggleLangMenu()">
+                        <img src="https://flagcdn.com/w20/ru.png" alt="ru" class="lang--current__flag">
+                        <span class="lang--current__code">ru</span>
+                        <span class="lang--current__arrow">
+                            <img src="img/arrow.svg" alt="arrow" id="langArrow">
+                        </span>
+                    </div>
+                
+                    <div class="header--lang__dropdown lang--dropdown" id="langDropdown">
+                        <div class="lang--dropdown__grid lang--grid">
+
+                            <a href="#" class="lang--grid__item lang--item is--selected">
+                                <img src="https://flagcdn.com/w20/bg.png" alt="bul" class="lang--item__flag">
+                                <span class="lang--item__name">bul</span>
+                            </a>
+                        
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ua.png" alt="ukr" class="lang--item__flag">
+                                <span class="lang--item__name">ukr</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="eng" class="lang--item__flag">
+                                <span class="lang--item__name">eng</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/al.png" alt="alb" class="lang--item__flag">
+                                <span class="lang--item__name">alb</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ae.png" alt="ara" class="lang--item__flag">
+                                <span class="lang--item__name">ara</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/hu.png" alt="hun" class="lang--item__flag">
+                                <span class="lang--item__name">hun</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ee.png" alt="est" class="lang--item__flag">
+                                <span class="lang--item__name">est</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="fra" class="lang--item__flag">
+                                <span class="lang--item__name">fra</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/de.png" alt="ger" class="lang--item__flag">
+                                <span class="lang--item__name">ger</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/it.png" alt="ita" class="lang--item__flag">
+                                <span class="lang--item__name">ita</span>
+                            </a>
+                                        <a href="#" class="lang--grid__item lang--item is--selected">
+                                <img src="https://flagcdn.com/w20/bg.png" alt="bul" class="lang--item__flag">
+                                <span class="lang--item__name">bul</span>
+                            </a>
+                        
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ua.png" alt="ukr" class="lang--item__flag">
+                                <span class="lang--item__name">ukr</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="eng" class="lang--item__flag">
+                                <span class="lang--item__name">eng</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/al.png" alt="alb" class="lang--item__flag">
+                                <span class="lang--item__name">alb</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ae.png" alt="ara" class="lang--item__flag">
+                                <span class="lang--item__name">ara</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/hu.png" alt="hun" class="lang--item__flag">
+                                <span class="lang--item__name">hun</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ee.png" alt="est" class="lang--item__flag">
+                                <span class="lang--item__name">est</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="fra" class="lang--item__flag">
+                                <span class="lang--item__name">fra</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/de.png" alt="ger" class="lang--item__flag">
+                                <span class="lang--item__name">ger</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/it.png" alt="ita" class="lang--item__flag">
+                                <span class="lang--item__name">ita</span>
+                            </a>
+                                        <a href="#" class="lang--grid__item lang--item is--selected">
+                                <img src="https://flagcdn.com/w20/bg.png" alt="bul" class="lang--item__flag">
+                                <span class="lang--item__name">bul</span>
+                            </a>
+                        
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ua.png" alt="ukr" class="lang--item__flag">
+                                <span class="lang--item__name">ukr</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="eng" class="lang--item__flag">
+                                <span class="lang--item__name">eng</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/al.png" alt="alb" class="lang--item__flag">
+                                <span class="lang--item__name">alb</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ae.png" alt="ara" class="lang--item__flag">
+                                <span class="lang--item__name">ara</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/hu.png" alt="hun" class="lang--item__flag">
+                                <span class="lang--item__name">hun</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ee.png" alt="est" class="lang--item__flag">
+                                <span class="lang--item__name">est</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="fra" class="lang--item__flag">
+                                <span class="lang--item__name">fra</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/de.png" alt="ger" class="lang--item__flag">
+                                <span class="lang--item__name">ger</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/it.png" alt="ita" class="lang--item__flag">
+                                <span class="lang--item__name">ita</span>
+                            </a>
+                                        <a href="#" class="lang--grid__item lang--item is--selected">
+                                <img src="https://flagcdn.com/w20/bg.png" alt="bul" class="lang--item__flag">
+                                <span class="lang--item__name">bul</span>
+                            </a>
+                        
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ua.png" alt="ukr" class="lang--item__flag">
+                                <span class="lang--item__name">ukr</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/gb.png" alt="eng" class="lang--item__flag">
+                                <span class="lang--item__name">eng</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/al.png" alt="alb" class="lang--item__flag">
+                                <span class="lang--item__name">alb</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ae.png" alt="ara" class="lang--item__flag">
+                                <span class="lang--item__name">ara</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/hu.png" alt="hun" class="lang--item__flag">
+                                <span class="lang--item__name">hun</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/ee.png" alt="est" class="lang--item__flag">
+                                <span class="lang--item__name">est</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/fr.png" alt="fra" class="lang--item__flag">
+                                <span class="lang--item__name">fra</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/de.png" alt="ger" class="lang--item__flag">
+                                <span class="lang--item__name">ger</span>
+                            </a>
+                            <a href="#" class="lang--grid__item lang--item">
+                                <img src="https://flagcdn.com/w20/it.png" alt="ita" class="lang--item__flag">
+                                <span class="lang--item__name">ita</span>
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="header--burger">
+                    <button class="header--burger__toggle menu--toggle" id="menuBtn" onclick="toggleMainMenu()">
+                        <span class="menu--toggle__line line--top"></span>
+                        <span class="menu--toggle__line line--middle"></span>
+                        <span class="menu--toggle__line line--bottom"></span>
+                    </button>
+                
+                    <div class="header--burger__dropdown menu--dropdown" id="menuDropdown">
+                        <nav class="menu--dropdown__nav nav--list">
+                            <a href="#" class="nav--list__item">Страхування</a>
+                            <a href="#" class="nav--list__item">Про компанію</a>
+                            <a href="#" class="nav--list__item">Допомога</a>
+                            <a href="#" class="nav--list__item">Контакти</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="tourist">
+            <div class="tourist--left">
+                <h1 class="tourist--title">Туристическое страхование <br> для путешествий за границу</h1>
+                
+                <ul class="tourist--benefits list--benefits">
+                    <li class="list--benefits__item">Покрывает COVID-19</li>
+                    <li class="list--benefits__item">Оформление онлайн на сайте</li>
+                    <li class="list--benefits__item">Подходит для оформления визы</li>
+                    <li class="list--benefits__item">Подходит для граждан всех стран</li>
+                </ul>
+            
+                <button class="tourist--action button--main">
+                    Оформить
+                    <svg class="button--main__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="tourist--right">
+                <img src="img/people--turist.png" alt="">
+
+            </div>
+        </div>
+    </div>
+<section class="pricing">
+    <h2 class="pricing--title">Цена медицинское страхование<br> выезжающих за рубеж</h2>
+    
+    <div class="pricing--container">
+        
+        <div class="pricing--card card--start">
+            <div class="card--start__header">
+                <h3 class="card--start__title">START</h3>
+                <p class="card--start__info"><strong>Покрытие на сумму 30 000 USD</strong><br> Франшиза — 25%</p>
+            </div>
+            <ul class="card--start__list pricing--list">
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Медицина</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">COVID-19</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Медико-транспортные услуги</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Ритуальные услуги</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">По истечении срока страхования</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Семья или родственники</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Поисковые операции</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Мобильная связь</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Несчастный случай</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Ответственность перед третьими лицами</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Аренда оборудования</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Юридическая помощь</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Страхование багажа</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Задержка рейса</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Путешествие на своём авто</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Вид отдыха</li>
+                <button class="card--start__button">Купить 15 UAH/день</button>
+            </ul>
+        </div>
+
+        <div class="pricing--card card--standart is--featured">
+            <div class="card--standart__header">
+                <h3 class="card--standart__title">STANDART</h3>
+                <p class="card--standart__info"><strong>Покрытие на сумму 50 000 USD</strong><br> Франшиза — 0%</p>
+            </div>
+            <ul class="card--standart__list pricing--list">
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Медицина</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">COVID-19</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Медико-транспортные услуги</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Ритуальные услуги</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">По истечении срока страхования</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Семья или родственники</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Поисковые операции</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Мобильная связь</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Несчастный случай</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Ответственность перед третьими лицами</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Аренда оборудования</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Юридическая помощь</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Страхование багажа</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Задержка рейса</li>
+                <li class="pricing--list__item is--disabled"><img src="img/tarif--pluss__off.png" alt="">Путешествие на своём авто</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Вид отдыха</li>
+                <button class="card--standart__button">Купить 23 UAH/день</button>
+            </ul>
+        </div>
+
+        <div class="pricing--card card--max">
+            <div class="card--max__header">
+                <h3 class="card--max__title">MAX</h3>
+                <p class="card--max__info"><strong>Покрытие на сумму 50 000 USD</strong><br> Франшиза — 0%</p>
+            </div>
+            <ul class="card--max__list pricing--list">
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Медицина</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">COVID-19</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Медико-транспортные услуги</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Ритуальные услуги</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">По истечении срока страхования</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Семья или родственники</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Поисковые операции</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Мобильная связь</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Несчастный случай</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Ответственность перед третьими лицами</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Аренда оборудования</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Юридическая помощь</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Страхование багажа</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Задержка рейса</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Путешествие на своём авто</li>
+                <li class="pricing--list__item is--active"><img src="img/tarif--pluss__on.png" alt="">Вид отдыха</li>
+                <button class="card--max__button">Купить 39 UAH/день</button>
+            </ul>
+
+        </div>
+
+    </div>
+</section>
+<section class="how-to-section">
+    <!-- Бокові картинки через absolute -->
+    <img src="img/forms-img-left.svg" alt="Calculator decor" class="decor-img decor-left">
+    <img src="img/forms-img-right.svg" alt="Phone decor" class="decor-img decor-right">
+
+    <h2>Как оформить туристическую страховку EKTA для виз и путешествий?</h2>
+
+    <div class="steps-container">
+        <!-- SVG хвиляста лінія -->
+        <svg class="steps-wave" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 30C50 30 150 5 200 5C250 5 350 55 400 55C450 55 550 5 600 5C650 5 750 30 800 30" 
+                  stroke="#FFCC00" stroke-width="2" stroke-dasharray="0" />
+        </svg>
+
+        <!-- Крок 1 -->
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-text">Рассчитайте точную стоимость полиса</div>
+        </div>
+
+        <!-- Крок 2 -->
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-text">Правильно напишите ваши данные</div>
+        </div>
+
+        <!-- Крок 3 -->
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-text">Проверьте личную информацию</div>
+        </div>
+
+        <!-- Крок 4 -->
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-text">Оплатите полис любым удобным способом</div>
+        </div>
+
+        <!-- Крок 5 -->
+        <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-text">Получите полис на е-мейл и скачайте на смартфон</div>
+        </div>
+    </div>
+    <div class="main-card">
+
+        <!-- Прогрес-бар -->
+        <div class="stepper">
+            <div class="step active" id="st-1"><div class="circle">1</div><span>Страна и дати</span></div>
+            <div class="line"></div>
+            <div class="step" id="st-2"><div class="circle">2</div><span>Личная информация</span></div>
+            <div class="line"></div>
+            <div class="step" id="st-3"><div class="circle">3</div><span>Проверка</span></div>
+            <div class="line"></div>
+            <div class="step" id="st-4"><div class="circle">4</div><span>Оплата</span></div>
+        </div>
+
+        <form id="insuranceForm">
+            <!-- КРОК 1 -->
+            <div class="form-panel active" id="panel-1">
+                <div class="tariff-selector">
+                    <button type="button" class="t-btn active">START</button>
+                    <button type="button" class="t-btn">STANDART</button>
+                    <button type="button" class="t-btn">MAX</button>
+                </div>
+                <div class="input-grid--1">
+                    <div class="field-group">
+                        <label>Дата путешествия</label>
+                        <div class="calendar-wrapper">
+                            <input type="text" id="f_date" placeholder="Выберите даты" class="validate" readonly>
+                            <div class="cal-icon" id="cal-trigger"><img src="img/calendar-img.png" alt=""></div>
+                        </div>
+                    </div>
+                    <div class="booking--container">
+<div class="field--group validate__form" id="countries-select">
+    <label class="field--label">Країна подорожі</label>
+    <div class="field--input multiselect--trigger">
+        <span class="multiselect--placeholder">Укажите страну путешествия</span>
+        <img src="img/calendar-arrow.png" alt="arrow" class="field--arrow">
+    </div>
+    <div class="multiselect--dropdown">
+        <label class="multiselect--option"><input type="checkbox" value="Україна"> Україна</label>
+        <label class="multiselect--option"><input type="checkbox" value="Польща"> Польща</label>
+    </div>
+</div>
+
+<div class="field--group validate__form" id="trip-type-select">
+    <label class="field--label">Тип отдыха</label>
+    <div class="select--wrapper field--input">
+        <input type="text" class="field--input__text" placeholder="Выберите тип отдыха" readonly>
+        <img src="img/calendar-arrow.png" alt="arrow" class="select--arrow">
+    </div>
+    <div class="select--dropdown">
+        <div class="select--option">Активный</div>
+        <div class="select--option">Релакс</div>
+    </div>
+</div>
+                    </div>
+                </div>
+                <div class="checkout--container">
+                  <div class="promo--wrapper">
+                    <label class="promo--label">
+                      <input type="checkbox" id="promo-toggle"  class="promo--checkbox">
+                      <span class="promo--text">У мене є промокод</span>
+                    </label>
+
+                    <div id="promo-field" class="promo--input-group" style="display: none;">
+                      <input type="text" class="promo--input" placeholder="Введіть промокод">
+                    </div>
+                  </div>
+
+                    <div class="promo--wrapper">
+                    <label class="promo--label">
+                      <input type="checkbox" id="promo-toggle"  class="promo--checkbox">
+                      <span class="promo--text">Уже путешествую</span>
+                    </label>
+
+                    <div id="promo-field" class="promo--input-group" style="display: none;">
+                      <input type="text" class="promo--input" placeholder="Введіть промокод">
+                    </div>
+                  </div>
+              
+                  <div class="toggle--wrapper">
+                    <label class="switch--container">
+                      <input type="checkbox" checked>
+                      <span class="switch--slider"></span>
+                    </label>
+                    <span class="switch--text">Страховий поліс на 1 рік (10 % знижка)</span>
+                  </div>
+                </div>
+            </div>
+
+            <!-- КРОК 2 -->
+            <div class="form-panel" id="panel-2">
+                <div class="input-grid--2">
+                    <div class="field-group"><label>Имя</label><input type="text" placeholder="IVAN" class="validate latin" id="f_name"><div class="err-text">Только латиница</div></div>
+                    <div class="field-group"><label>Фамилия</label><input type="text" placeholder="IVANOV" class="validate latin" id="f_surname"><div class="err-text">Только латиница</div></div>
+                    <div class="field-group"><label>Дата рождения</label><input type="text" placeholder="ДД.ММ.РРРР" class="validate" id="f_dob"></div>
+                </div>
+                <div class="input-grid--2">
+                    <div class="field-group"><label>Паспорт</label><input type="text" placeholder="FA 000000" class="validate" id="f_pass"></div>
+                    <div class="field-group"><label>Телефон</label><input type="text" placeholder="+380..." class="validate"></div>
+                    <div class="field-group"><label>E-mail</label><input type="email" placeholder="mail@test.com" class="validate" id="f_email"></div>
+                </div>
+            </div>
+
+            <!-- КРОК 3 -->
+            <div class="form-panel" id="panel-3">
+                <div class="summary-cards">
+                    <div class="s-card">
+                        <h4>Общая информация</h4>
+                        <p>Даты: <span id="res_date">-</span></p>
+                        <p>Страна: <span id="res_country">-</span></p>
+                    </div>
+                    <div class="s-card">
+                        <h4>Покупатель</h4>
+                        <p>Имя: <span id="res_name">-</span></p>
+                        <p>Паспорт: <span id="res_pass">-</span></p>
+                    </div>
+                </div>
+                <table class="tourist-table">
+                    <thead><tr><th>№</th><th>Имя / Фамилия</th><th>Паспорт</th><th>Дата рождения</th></tr></thead>
+                    <tbody><tr><td>1</td><td id="res_full_name">-</td><td id="res_p_num">-</td><td id="res_dob_val">-</td></tr></tbody>
+                </table>
+            </div>
+
+            <!-- КРОК 4 -->
+            <div class="form-panel" id="panel-4">
+                <div class="pay-tabs">
+                    <button type="button" class="p-tab active" data-pay="card">КАРТА</button>
+                    <button type="button" class="p-tab" data-pay="apple">Apple Pay</button>
+                    <button type="button" class="p-tab" data-pay="google">Google Pay</button>
+                </div>
+                <div class="pay-view active" id="view-card">
+                    <div class="card-visual">
+                        <input type="text" placeholder="0000 0000 0000 0000" class="validate">
+                        <div class="card-row">
+                            <input type="text" placeholder="ММ/ГГ" class="validate" style="width:80px">
+                            <input type="text" placeholder="CVV" class="validate" style="width:80px">
+                        </div>
+                    </div>
+                </div>
+                <div class="pay-view" id="view-digital">
+                    <button type="button" class="fast-btn">Оплатить через <span id="fast-pay-name">G Pay</span></button>
+                </div>
+            </div>
+
+            <!-- ФУТЕР -->
+            <div class="footer">
+                <div class="price-box">
+                    Длительность: <b>14 днів</b><br>
+                    Итого: <b>140 UAH</b>
+                </div>
+                <div class="nav-right">
+                    <div class="agree-area--block" id="agree-area"style="margin-bottom:15px">
+                        <label><input type="checkbox" id="agree_check"> Принимаю условия договора</label>
+                    </div>
+                    <div class="btns">
+                        <button type="button" id="btnBack" class="btn-back">Назад</button>
+                        <button type="button" id="btnNext" class="btn-next">Далее</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</section>
+
+<section class="benefits">
+    <div class="benefits--container">
+        <h2 class="benefits--title">Почему выбирают<br> страховую компанию EKTA?</h2>
+        
+        <div class="benefits--grid">
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-1.png" alt="world" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">Работаем по всему миру</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-2.png" alt="support" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">Круглосуточная помощь 24/7</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-3.png" alt="contract" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">Без скрытых пунктов в договоре</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-4.png" alt="online" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">Оформление онлайн без похода в офис</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-5.png" alt="covid" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">В страховку включен COVID</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-6.png" alt="experience" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">10 лет на рынке страхования</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-7.png" alt="experience" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">Команда более 150 человек</p>
+            </div>
+            <div class="benefits--grid__item benefit--item">
+                <div class="benefit--item__icon">
+                    <img src="img/benefits-img-8.png" alt="limits" class="benefit--item__img">
+                </div>
+                <p class="benefit--item__text">Без скрытых ограничений по медицине</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="faq">
+    <div class="faq--container">
+        <h2 class="faq--title">Для кого подходит медицинская страховка EKTA?</h2>
+        
+        <div class="faq--content">
+            <div class="faq--content__visual faq--visual">
+                <img src="img/faq-img.svg" alt="Illustration" class="faq--visual__img">
+            </div>
+
+            <div class="faq--content__accordion accordion">
+                
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Получение визы</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Наши полисы полностью соответствуют требованиям консульств для получения шенгенской и других типов виз.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Спокойный отдых</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Базовое покрытие всех медицинских расходов, включая амбулаторное и стационарное лечение.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Экстремальный отдых</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Базовое покрытие всех медицинских расходов, включая амбулаторное и стационарное лечение.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Для детей и беременных</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Базовое покрытие всех медицинских расходов, включая амбулаторное и стационарное лечение.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Для въезда в другую страну</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Базовое покрытие всех медицинских расходов, включая амбулаторное и стационарное лечение.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Страховой полис на любой случай</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Базовое покрытие всех медицинских расходов, включая амбулаторное и стационарное лечение.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion--item">
+                    <div class="accordion--item__header" onclick="toggleAccordion(this)">
+                        <span class="accordion--item__title">Страховка с покрытием COVID</span>
+                        <div class="accordion--item__arrow">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                    </div>
+                    <div class="accordion--item__body">
+                        <div class="accordion--item__text">
+                            Базовое покрытие всех медицинских расходов, включая амбулаторное и стационарное лечение.
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </div>
+    </div>
+</section>
+<section class="travel-risks">
+    <div class="faq--container">
+        <div class="faq--content">
+            <div class="travel-risks--text">
+                <h2 class="faq--title">Что может случится во время путешествия в другой стране?</h2>
+                <ul class="risks--list">
+                    <li>Перелом, растяжение, ушиб</li>
+                    <li>Пищевое отравление</li>
+                    <li>Вызов доктора или скорой помощи</li>
+                    <li>Утеря багажа</li>
+                    <li>Отмена рейса</li>
+                    <li>Вынужденная обсервация 14 дней</li>
+                    <li>Офицер на границе не пропустил в страну</li>
+                </ul>
+            </div>
+
+            <div class="travel-risks--video">
+                <div class="laptop--screen" id="videoContainer">
+                    <img src="img/ekta-video__img.jpg" alt="Video" class="video--poster">
+                    <button class="play--button" onclick="showVideo('ТВІЙ_ID_ВІДЕО_ТУТ')" aria-label="Play video">
+                        <svg width="60" height="60" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="20" fill="white"/>
+                            <path d="M16 12L28 20L16 28V12Z" fill="#FDD000"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="reviews">
+    <div class="reviews--container">
+        
+        <div class="reviews--content">
+            <h2 class="reviews--title">Ваши отзывы о<br> страховке ЕКТА</h2>
+            
+            <div class="reviews--quote card">
+                <p class="card--text">
+                    «Таким образом консультация с широким активом позволяет выполнять важные задания по разработке модели развития. Разнообразный и богатый опыт начало повседневной работы по формированию позиции требует определения и уточнения позиций».
+                </p>
+                <span class="card--author">Иван Иванов</span>
+            </div>
+        </div>
+
+        <div class="reviews--visual">
+        <div class="orbits">
+            <div class="orbits--item is--large"></div>
+            <div class="orbits--item is--medium"></div>
+            <div class="orbits--item is--small"></div>
+        
+            <div class="orbits--user user--1"><img src="img/Ellipse-1.svg" alt=""></div>
+            <div class="orbits--user user--2"><img src="img/Ellipse-2.svg" alt=""></div>
+            <div class="orbits--user user--3"><img src="img/Ellipse-3.svg" alt=""></div>
+            <div class="orbits--user user--4"><img src="img/Ellipse-8.svg" alt=""></div>
+            <div class="orbits--user user--5"><img src="img/Ellipse-5.svg" alt=""></div>
+            <div class="orbits--user user--6"><img src="img/Ellipse-6.svg" alt=""></div>
+            <div class="orbits--user user--7"><img src="img/Ellipse-7.svg" alt=""></div>
+
+            <div class="orbits--user user--center"><img src="img/Ellipse-4.svg" alt=""></div>
+        </div>
+        </div>
+
+    </div>
+</section>
+<section class="faq-list">
+    <div class="faq-list--title__block">
+        <h2 class="faq-list--title">Часто задаваемые вопросы</h2>
+    </div>
+    <img src="img/question mark-left.jpg" class="faq-list--decor is--left" alt="">
+    <img src="img/question mark-right.jpg" class="faq-list--decor is--right" alt="">
+    <div class="faq-list--container">
+        
+        <div class="faq-list--accordion">
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Что такое франшиза?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Это сумма которую клиент должен оплатить при наступлении страхового случая. 
+                    Пример: Оплата за лечение в больнице — 1 000 USD. Франшиза по тарифу START — 25 %, клиент оплачивает 250 USD, а страховая компания — 750 USD. Таким образом, сумма делится между клиентом и страховой компанией в соответствии с условиями тарифного плана.</p>
+                </div>
+            </div>
+            
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Обязательна ли страховка для выезда за границу?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Да. В соответствии с новым постановлением Кабинета Министров от 20.06.2020 запрещается выезд за границу без страховки. Обычно стандартный страховой полис входит в необходимый пакет документов к вашему туру. Также вы можете приобрести полис отдельно.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Можно ли оформить страховку находясь за рубежом?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Могут быть 2 варианта.
+                    Нет. Если вы хотите приобрести туристический страховой полис на территории страны в которую прибыли. Такой полис будет недействительным.
+                    Да. Если вы находитесь за границей и планируете поездку в другую страну. Страховой полис можно оформить на сайте компании и оплатить картой.                   
+                    Действия страхового полиса начинается с момента, как только вы пересекли границу. </p>
+                </div>
+            </div>
+            
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Когда начинает действовать страховой полис?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Действие страхового полиса начинается с момента, как только вы пересекли границу.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">На каком языке вводить информацию?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Заполнять латинскими буквами, как это указано в вашем загран.паспорте.</p>
+                </div>
+            </div>
+            
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Что делать если неправильно ввели данные?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Нужно отменить операцию или обновить страницу и выйти из диалогового окна программы или платформы. Если такой возможности нету, сообщите об этом страховой компании. Мы поможем вам в решении вопроса.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Как купить страховку для ребенка?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Страхование детей осуществляется так же, как и взрослых. Укажите ваши данные в разделе для клиента, который оплачивает стоимость полиса, а данные про ребенка или другого несовершеннолетнего — в разделе «Турист».</p>
+                </div>
+            </div>
+            
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Как оформить страховой полис на другого человека?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Вы можете оформить страховой полис на любого гражданина без его участия. Важно правильно ввести данные при оформлении на сайте. После оплаты отправьте электронный страховой полис соответствующему лицу.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Какую страну указывать в полисе, если в планах путешествия две или больше страны подряд?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>При выборе страны выберите опцию «Вся Европа» или «Весь мир»</p>
+                </div>
+            </div>
+            
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Что делать если не прошла оплата?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Рекомендуем связаться с вашим банком, проверить лимит интернет-операций и баланс платежной карточки.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Как долго ожидать получение страхового полиса после оплаты?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Вы получите страховой полис на ваш e-mail в течении 10-15 минут.</p>
+                </div>
+            </div>
+            
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">В каком виде будет отправлен полис?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Туристический полис будет отправлен на вашу почту в электронном виде в течении 10-15 минут. Распечатывать не обязательно. Достаточно сохранить электронный полис на телефоне или планшете.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Что делать если полис не пришел на e-mail?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>В первую очередь необходимо проверить папку «Спам» или «Промоакции / Реклама». Если прошло больше 10 минут, а полиса на почте все еще нету — сообщите об этом страховой компанииудобным для вас способом: <br>
+                        <br>E-mail: info@ic-ekta.com
+                        <br>Viber: http://www.viber.com/ekta_insure
+                        <br>Telegram: http://t.me/ic_ekta_bot</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Что делать если произошел страховой случай?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Первое что необходимо сделать — связаться со страховой компанией. После оплаты вы получаете страховой полис в котором указаны контактные номера. Звонить необходимо исключительно по ним. Важно соблюдать инструкции от специалиста по решению экстренных вопросов.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Как осуществляется денежная компенсация после страхового случая?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Страховая компания самостоятельно решает все вопросы, связанные с транспортом и оплатой лечения. Вам не нужно искать клинику, врача, хранить чеки за лечение, предоставлять их страховой компании и оплачивать собственные средства на лечение по страховому случаю находясь за границей.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Можно ли купить страховку на один день?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Нет. Минимальный срок действия страховки — 2 дня.</p>
+                </div>
+            </div>
+            <div class="faq-list--item">
+                <div class="faq-list--header" onclick="toggleFAQ(this)">
+                    <span class="faq-list--text">Необходимо ли покупать страховку при перелете транзитным рейсом в Украину?</span>
+                    <span class="faq-list--arrow"></span>
+                </div>
+                <div class="faq-list--body">
+                    <p>Да, страховой случай может произойти в любом месте и в любое время. Это распространяется и на несколько часов транзитного перелёта. Если у вас нету транзитной страховки — кто о вас позаботится? Поэтому советуем оформить страховку, когда летите в Украину транзитом, чтобы получить поддержку при непредвиденных обстоятельствах.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer-wrapper-basic">
+    <div class="footer-container-basic">
+        
+        <!-- Верхня частина: заголовок та вибір мови -->
+        <div class="footer-header-basic">
+            <h2 class="footer-title-basic">Нам доверяют более 2 654 000 клиентов</h2>
+            <div class="language-select-basic">
+                <img src="https://flagcdn.com/w20/ru.png" alt="ru">
+                <span>ru</span>
+                <i class="arrow-down-basic"></i>
+            </div>
+        </div>
+
+        <!-- Блок з рейтингами та сертифікатами -->
+        <div class="footer-trust-basic">
+            <div class="trust-item-basic">
+                <div class="trust-brand-basic"><img src="img/trust-pilot-img.svg" alt=""></div>
+                <p>EKTA страховая компания оценена в 4.9 из 5<br><span>На основе 1030 отзывов</span></p>
+            </div>
+            <div class="trust-item-basic">
+                <div class="trust-brand-basic"><img src="img/google-votes-img.svg" alt=""></div>
+                <p>EKTA страховая компания оценена в 4.8 из 5<br><span>На основе 2174 отзывов</span></p>
+            </div>
+            <div class="trust-badges-basic">
+                <img src="img/medal-1.svg" alt="Brand Trust">
+                <img src="img/medal-2.svg" alt="Lowest Price">
+            </div>
+            <div class="payment-icons-basic">
+                <div class="pay-row-basic">
+                    <span class="pay-card-basic"><img src="img/g-pay-img.svg" alt=""></span>
+                    <span class="pay-card-basic"><img src="img/a-pay-img.svg" alt=""></span>
+                    <span class="pay-card-basic"><img src="img/mastercard-img.svg" alt=""></span>
+                    <span class="pay-card-basic"><img src="img/visa-img.svg" alt=""></span>
+                </div>
+                <div class="security-row-basic">
+                    <span class="sec-card-basic"><img src="img/norton-img.svg" alt=""></span>
+                    <span class="sec-card-basic"><img src="img/secure-img.svg" alt=""></span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider-basic">
+
+        <!-- Основна сітка з посиланнями -->
+        <div class="footer-grid-basic">
+            <div class="footer-col-basic">
+                <h4 class="col-title-basic">Меню</h4>
+                <ul class="footer-list-basic">
+                    <li><a href="#" class="footer-link-basic">Стоимость</a></li>
+                    <li><a href="#" class="footer-link-basic">Для кого</a></li>
+                    <li><a href="#" class="footer-link-basic">Отзывы</a></li>
+                    <li><a href="#" class="footer-link-basic">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col-basic">
+                <h4 class="col-title-basic">Информация</h4>
+                <ul class="footer-list-basic">
+                    <li><a href="#" class="footer-link-basic">Публичный договор</a></li>
+                    <li><a href="#" class="footer-link-basic">Политика конфиденциальности</a></li>
+                    <li><a href="#" class="footer-link-basic">Страхование багажа</a></li>
+                    <li><a href="#" class="footer-link-basic">Сотрудничество с нами</a></li>
+                    <li><a href="#" class="footer-link-basic">Affiliate Program</a></li>
+                    <li><a href="#" class="footer-link-basic">Проверить полис</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col-basic">
+                <h4 class="col-title-basic">Контакты</h4>
+                <p class="contact-text-basic">г. Киев, 03150, ул. Деловая 5, корпус 2, B1</p>
+                <p class="contact-text-basic">info@ic-ekta.com</p>
+                <p class="contact-text-basic">+ 380 (93) 573 12 30</p>
+                <p class="contact-text-basic">+ 1 (302) 246-1037</p>
+            </div>
+
+            <div class="footer-col-basic">
+                <h4 class="col-title-basic">Напишите нам</h4>
+                <div class="social-icons-basic">
+                    <a href="#"><img src="img/viber.png" alt=""></a>
+                    <a href="#"><img src="img/masanger.png" alt=""></a>
+                    <a href="#"><img src="img/wha.png" alt=""></a>
+                    <a href="#"><img src="img/telegram.png" alt=""></a>
+                </div>
+                <h4 class="col-title-basic" style="margin-top:20px;">Социальные сети</h4>
+                <div class="social-icons-basic">
+                    <a href="#"><img src="img/in.png" alt=""></a>
+                    <a href="#"><img src="img/t.png" alt=""></a>
+                    <a href="#"><img src="img/instagram.png" alt=""></a>
+                    <a href="#"><img src="img/facebook.png" alt=""></a>
+                    <a href="#"><img src="img/wk.png" alt=""></a>
+                </div>
+                
+                <h4 class="col-title-basic" style="margin-top:20px;">Подпишитесь на нашу рассылку</h4>
+                <form class="subscribe-form-basic">
+                    <input type="email" placeholder="Ваш e-mail" class="subscribe-input-basic">
+                    <button type="submit" class="subscribe-btn-basic">Подписаться</button>
+                </form>
+                <label class="checkbox-label-basic">
+                    <input type="checkbox"> Принимаю условия обработки данных
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright-basic">
+        ©2021 ekta. Все права защищены
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
