@@ -295,3 +295,14 @@ document.getElementById('btnNext').addEventListener('click', function() {
 [fDate, tripWrapper.querySelector('input')].forEach(el => el.addEventListener('input', validateAll));
 countryCheckboxes.forEach(cb => cb.addEventListener('change', validateAll));
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.accordion--trigger');
+
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', function() {
+            const item = this.parentElement;
+            item.classList.toggle('is--open');
+        });
+    });
+});

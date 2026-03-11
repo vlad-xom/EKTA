@@ -17,6 +17,8 @@
     --color--card--start: #E7E7E7;
     --color--card--standart: #42B2E9;
     --color--card--max: #FDD000;
+    --colot--card--off-text: #B3B3B3;
+    --color--card--on-text: #242424;
 
     --color--bg--start: #FFFFFF;
     --color--bg--standart: #DBF0FB;
@@ -491,6 +493,7 @@ font-family: "Open Sans", sans-serif;
     transition: transform 0.2s, box-shadow 0.2s;
     line-height: 100%;
     letter-spacing: 0%;
+    margin-bottom: 100px;
 }
 
 .button--main:hover {
@@ -505,189 +508,198 @@ font-family: "Open Sans", sans-serif;
     transform: translateX(5px);
 }
                                                         /*pricing*/
+
 .pricing {
-    padding: 110px 20px;
+    padding: 80px 20px 160px;
     background-color: #F5F5F5;
     text-align: center;
     font-family: 'Inter', sans-serif;
     border-radius: 50px;
-}
-
-.pricing--title {
-    font-family: 'Roboto' sans-serif;
-    font-weight: 900;
-    color: var(--color--text);
-    font-size: 40px;
-    line-height: 55px;
-    text-align: center;
-    margin-bottom: 78px;
-}
-.card--start__info,
-.card--standart__info,
-.card--max__info{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-    margin-top: 20px;
-}
-.card--standart__info {
-    color: var(--color--white);
-}
-.card--start__info strong,
-.card--standart__info strong,
-.card--max__info strong {
-    display: flex;
-    justify-content: center;
+    position: relative; 
+    z-index: 999;
 }
 
 .pricing--container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
+    align-items: flex-start;
+}
+.pricing--title {
+    font-family: 'Roboto' sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--color--text);
+    margin-bottom: 78px;
 }
 
-/* Загальні стилі картки */
+/* Картки */
 .pricing--card {
-    border-radius: 50px;
-    padding: 3px;
     width: 380px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-radius: 50px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease;
-}
-.card--start {
-    background-color: var(--color--card--start);
-    transform: translateY(66px);
-}
-.card--standart {
-   background-color: var(--color--card--standart);
-}
-.card--max {
-    background-color: var(--color--card--max);
-    transform: translateY(66px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Заголовки карток */
-.card--start__header, .card--standart__header, .card--max__header {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-}
-
-.card--start__title, .card--standart__title, .card--max__title {
+/* Кольори шапок */
+.card--start__title {
     font-weight: 900;
     font-size: 30px;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
-    font-family: 'Roboto' sans-serif;
-    padding: 29px 0 20px;
-
-}
-.card--start__title {
     color: var(--color--text);
-}
-.card--standart__title { 
-    color: var(--color--white); 
-}
-.card--max__title { 
-    color: var(--color--text); 
-}
-
-.card--start__title {
+    padding: 29px 0 20px;
     border-bottom: 2px solid #C1C1C1;
 }
 .card--standart__title {
-    border-bottom: 2px solid #fff;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--color--white);
+    padding: 29px 0 20px;
+    border-bottom: 2px solid #FFFFFF;
 }
 .card--max__title {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: var(--color--text);
+    padding: 29px 0 20px;
     border-bottom: 2px solid #DDB600;
 }
-/* Список послуг */
-.pricing--list {
-    padding: 40px 25px 10px;
-    background-color: var(--color--white);
-    list-style: none;
-    text-align: left;
-    border-bottom-left-radius: 50px; /* Нижній лівий */
-    border-bottom-right-radius: 50px;/* Нижній правий */
+.card--start__info,
+.card--standart__info,
+.card--max__info {
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 20px 0 29px;
+}
+.card--start__info strong,
+.card--standart__info strong,
+.card--max__info strong {
+    display: block;    
+}
+.card--start { 
+    background-color: var(--color--card--start); 
+    transform: translateY(66px)
+}
+.card--standart { 
+    background-color: var(--color--card--standart); 
+}
+.card--max { 
+    background-color: var(--color--card--max); 
+    transform: translateY(66px)
 }
 .card--start__list {
     background-color: var(--color--bg--start);
 }
 .card--standart__list {
     background-color: var(--color--bg--standart);
-} 
+}
 .card--max__list {
     background-color: var(--color--bg--max);
-} 
+}
+.card--standart__title, .card--standart__info { color: var(--color--white); }
 
-.pricing--list__item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'open-sans' sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    margin-bottom: 20px;
+/* Списки */
+.pricing--list {
+    margin: 3px;
+    padding: 30px 20px;
+    border-radius: 0 0 50px 50px;
+    list-style: none;
+    text-align: left;
 }
 
-/* СТИЛЬ ДЛЯ ПЕРЕКРЕСЛЕНИХ ПУНКТІВ */
-.pricing--list__item.is--disabled {
-    color: #b0b0b0; /* Сірий колір */
-    text-decoration: line-through; /* Перекреслення */
+.pricing--list__item {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--color--text);
+}
+
+.is--disabled {
+    color: var(--colot--card--on-text);
     opacity: 0.6;
 }
 
-.pricing--list__item.is--disabled::before {
-    opacity: 0.5;
+/* Акордеон */
+.accordion--trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.accordion--content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 30px;
+}
+
+.accordion--content p {
+    font-size: 14px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.accordion--item-card.is--open .accordion--content {
+    max-height: 100px;
 }
 
 /* Кнопки */
 .pricing--card button {
+    width: 100%;
     padding: 21px 30px;
-    max-width: 343px;
     border-radius: 25px;
+    border: none;
     cursor: pointer;
-    transition: 0.5s;
+    margin-top: 20px;
     font-weight: 700;
     font-size: 25px;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
-    margin: 20px auto 53px;
+    vertical-align: middle;
 }
 
 .card--start__button { 
-    background: var(--color--card--start); 
-    color: var(--color--text); 
+    background-color: var(--color--card--start); 
+    transition: all 0.5s ease;
 }
 .card--standart__button { 
-    background: var(--color--card--standart); 
+    background-color: var(--color--card--standart); 
+    transition: all 0.5s ease;
     color: var(--color--white); 
 }
 .card--max__button { 
-    background: var(--color--card--max); 
-    color: var(--color--text); 
+    background-color: var(--color--card--max); 
+    transition: all 0.5s ease;
 }
-/*hover btn card*/
-.card--start__button:hover { 
-    background: var(--color--text); 
+
+.card--start__button:hover {
+    background-color: var(--color--text);
     color: var(--color--white);
 }
-.card--standart__button:hover { 
-    background: var(--color--white); 
-    color: var(--color--card--standart); 
+.card--standart__button:hover {
+    background-color: var(--color--white);
+    color: var(--color--card--standart);
 }
-.card--max__button:hover { 
-    background: var(--color--white); 
-    color: var(--color--card--max); 
+.card--max__button:hover {
+    background-color: var(--color--white);
+    color: var(--color--card--max);
 }
                                                                 /*forms*/
 /* Головний контейнер секції */
@@ -2057,10 +2069,46 @@ input:checked + .slider:before { transform: translateX(18px); }
     .header--menu {
         padding: 0 200px;
     }
+    .tourist {
+        padding: 0 200px;
+    }
 }
 @media (max-width: 1400px) {
     .header--menu {
         padding: 0 90px;
+    }
+    .tourist {
+        padding: 0 90px;
+    }
+    .tourist--right {
+        position: absolute;
+        right: 0px; 
+        top: 530px;
+        transform: translateY(-50%);
+        pointer-events: none; /* Щоб картинка не заважала клікати на кнопки */
+    }
+    
+    .tourist--right img {
+        width: 100%;
+        height: auto;
+        opacity: 0.8; /* Опціонально: робимо прозорішою, щоб текст краще читали */
+    }
+    .tourist--left {
+        z-index: 999;
+    }
+}
+@media (max-width: 1300px) {
+    .card--start {
+        transform: translateY(0px);
+    }
+    .card--max {
+        transform: translateY(0px);
+    }
+    .pricing--card {
+        width: 440px;
+    }
+    .pricing--list__item {
+        font-size: 18px;
     }
 }
 @media (max-width: 1100px) {
@@ -2079,13 +2127,45 @@ input:checked + .slider:before { transform: translateX(18px); }
     .header--lang {
         display: none;
     }
+    .tourist--right {
+        transform: translateY(-10%);
+    }
 }
 @media (max-width: 740px) {
     .header--menu {
         padding: 0 40px;
     }
+    .tourist {
+        padding: 0 40px;
+    }
+    .tourist--title {
+        margin-bottom: 30px;
+        font-size: 40px;
+    }
+    .list--benefits__item {
+        font-size: 20px;
+    }
+    .header--menu {
+        margin-bottom: 54px;
+    }
+    .tourist--right {
+        transform: translateY(-33%);
+    }
 }
-
+@media (max-width: 700px) {
+    .tourist--right {
+        height: 62%;
+    }
+    .pricing--card {
+        width: 380px;
+    }
+    .pricing--list__item {
+        font-size: 15px;
+    }
+    .pricing--title {
+        font-size: 30px;
+    }
+}
 @media (max-width: 600px) {
     .footer-grid-basic {
         grid-template-columns: 1fr;
@@ -2106,6 +2186,9 @@ input:checked + .slider:before { transform: translateX(18px); }
 }
 @media (max-width: 540px) {
     .header--menu {
+        padding: 0 25px;
+    }
+    .tourist {
         padding: 0 25px;
     }
 }
@@ -2130,6 +2213,39 @@ input:checked + .slider:before { transform: translateX(18px); }
         letter-spacing: 0%;
         text-align: center;
     }
+    .tourist--right {
+        height: 10%;
+    }
+    .tourist--title {
+        margin-bottom: 30px;
+        font-size: 25px;
+    }
+    .list--benefits__item {
+        font-size: 15px;
+    }
+    .tourist--right {
+        height: 45%;
+    }
+    .button--main {
+        font-size: 16px;
+    }
+    .list--benefits {
+        margin-bottom: 50px;
+    }
+    .pricing--title {
+        font-size: 20px;
+        line-height: normal;
+    }
+    .pricing--card {
+        width: 310px;
+    }
+    .pricing--list__item {
+        font-size: 13px;
+    }
+    .pricing--card button {
+        font-size: 20px;
+    }
+
 }
 @media (max-width: 410px) {
     .header--logo {
