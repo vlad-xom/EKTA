@@ -1791,6 +1791,103 @@ input:checked + .slider:before { transform: translateX(18px); }
 }
 
 /* --- ПОЗИЦІОНУВАННЯ 8 ФОТО --- */
+:root {
+    --accent-color: #6366f1; /* Сучасний індиго */
+    --bg-card: #ffffff;
+}
+
+.reviews--quote {
+    position: relative;
+    max-width: 450px;
+    padding: 40px;
+    background: var(--bg-card);
+    border-radius: 24px;
+    /* Дуже тонка і м'яка подвійна тінь */
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.02),
+        0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Велика декоративна лапка на фоні */
+.card--icon {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 150px;
+    color: var(--accent-color);
+    opacity: 0.05;
+    font-family: serif;
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.card--icon::after {
+    content: '”';
+}
+
+/* Текст */
+.card--text {
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 25px;
+    font-weight: 400;
+    transition: transform 0.4s ease;
+}
+
+/* Автор з лінією */
+.card--author {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--color--text);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card--author::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: var(--accent-color);
+    margin-right: 12px;
+    transition: width 0.4s ease;
+}
+
+/* --- ЕФЕКТИ ПРИ НАВЕДЕННІ --- */
+.reviews--quote:hover {
+    transform: scale(1.02) translateY(-10px);
+    border-color: var(--navy);
+    box-shadow: 0 25px 50px -12px rgba(99, 102, 241, 0.15);
+}
+
+/* Анімація лапки: вона "випливає" */
+.reviews--quote:hover .card--icon {
+    transform: rotate(-15px) translate(-20px, 20px);
+    opacity: 0.12;
+}
+
+/* Текст трохи зміщується для об'єму */
+.reviews--quote:hover .card--text {
+    transform: translateX(5px);
+}
+
+/* Лінія автора подовжується */
+.reviews--quote:hover .card--author::before {
+    width: 40px;
+}
+
+/* Невеликий спалах кольору при кліку/активі */
+.reviews--quote:active {
+    transform: scale(0.98);
+}
 
 /* Велике коло (Large) */
 .user--1 { width: 55px; height: 55px; top: 0; left: 50%; transform: translateX(-50%); }
@@ -1826,19 +1923,6 @@ input:checked + .slider:before { transform: translateX(18px); }
     filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
 }
 
-/* Жовті декоративні точки як на фото */
-.orbits::after {
-    content: '';
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: #FDD000;
-    border-radius: 50%;
-    top: 10%;
-    right: 35%;
-    /* Додаткові крапки через тіні */
-    box-shadow: -200px 400px 0 #FDD000, 40px 300px 0 #FDD000;
-}
                                                         /*faq-list*/
 /* Батьківський контейнер */
 .faq-list {
@@ -2316,6 +2400,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     .video--content {
         justify-content: center;
     }
+    .reviews--visual {
+        width: 450px;
+        height: 450px;
+    }
 }
 @media (max-width: 1100px) {
     .content--info {
@@ -2336,6 +2424,26 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .video--title {
         font-size: 28px;
+    }
+    .reviews--content {
+        display: flex;
+        flex-direction: column;
+    }
+    .reviews--visual {
+        width: 380px;
+        height: 380px;
+    }
+    .reviews--container {
+        justify-content: space-around;
+    }
+    .reviews--quote {
+        max-width: 400px;
+    }
+    .card--text {
+        font-size: 15px;
+    }
+    .reviews--quote span {
+        font-size: 17px;
     }
 }
 @media (max-width: 1000px) {
@@ -2406,6 +2514,18 @@ input:checked + .slider:before { transform: translateX(18px); }
     .video--content {
         gap: 10px;
     }
+    .reviews--quote {
+        max-width: 420px;
+        padding: 20px;
+    }
+    .card--text {
+        letter-spacing: 1px;
+        font-size: 15px;
+        line-height: 20px;
+    }
+    .reviews--quote span {
+        font-size: 17px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -2451,6 +2571,17 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .promo--text, .switch--text, .agree-area--block {
         font-size: 12px;
+    }
+    .reviews--title {
+        font-size: 35px;
+        margin-bottom: 30px;
+    }
+    .reviews--visual {
+        width: 340px;
+        height: 340px;
+    }
+    .reviews--quote {
+        max-width: 350px;
     }
 }
 @media (max-width: 810px) {
@@ -2498,6 +2629,24 @@ input:checked + .slider:before { transform: translateX(18px); }
     .faq--content {
         flex-direction: column;
     }
+    .reviews--visual {
+        width: 290px;
+        height: 290px;
+    }
+    .user--2 {
+        width: 30px;
+        height: 30px;
+    }
+    .user--3,
+    .user--1,
+    .user--5 {
+        width: 40px;
+        height: 40px;
+    }
+    .user--center {
+        width: 70px;
+        height: 70px;
+    }
 }
 @media (max-width: 740px) {
     .header--menu {
@@ -2529,6 +2678,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     .how-to-section h2 {
         font-size: 32px;
         margin-bottom: 40px;
+    }
+    .reviews--quote {
+        max-width: 315px;
+    }
+    .card--text {
+        font-size: 14px;
     }
 }
 @media (max-width: 700px) {
@@ -2569,6 +2724,16 @@ input:checked + .slider:before { transform: translateX(18px); }
     .risks--list {
         display: flex;
         flex-direction: column;
+    }
+    .reviews--container {
+        flex-direction: column;
+    }
+    .reviews--content {
+        margin-bottom: 20px;
+    }
+    .reviews--visual {
+        width: 370px;
+        height: 370px;
     }
 }
 @media (max-width: 640px) {
@@ -2758,6 +2923,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .accordion--item__title {
         font-size: 13px;
+    }
+    .reviews--visual {
+        width: 320px;
+        height: 320px;
     }
 }
 @media (max-width: 410px) {
