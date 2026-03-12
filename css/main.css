@@ -2639,6 +2639,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     .how-to-section h2 {
         font-size: 20px;
     }
+    .main-card {
+        width: 320px;
+    }
+    .t-btn, .p-tab {
+        font-size: 10px;
+    }
 }
 @media (max-width: 410px) {
     .header--logo {
