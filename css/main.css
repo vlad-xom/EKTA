@@ -2550,6 +2550,13 @@ input:checked + .slider:before { transform: translateX(18px); }
     .tourist {
         padding: 0 25px;
     }
+    .main-card {
+        width: 380px;
+    }
+    .t-btn, .p-tab {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
 }
 @media (max-width: 530px) {
     .step-item {
