@@ -1028,8 +1028,8 @@ input:checked + .switch--slider:before {
     width: 322px;
     position: relative; 
     display: flex; 
-    border: 2px solid var(--blue); 
-    border-radius: 12px; 
+    border: 2px solid var(--navy); 
+    border-radius: 15px; 
     background: var(--light-bg); 
     overflow: hidden; 
     margin-right: 30px;
@@ -1042,7 +1042,7 @@ input:checked + .switch--slider:before {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    border-left: 1.5px solid var(--blue); 
+    border-left: 2px solid var(--navy); 
     cursor: pointer; color: var(--blue); 
 }
 
@@ -1051,7 +1051,7 @@ input:checked + .switch--slider:before {
     display: flex; 
     justify-content: space-between; 
     align-items: flex-end; 
-    border-top: 2px solid var(--blue); 
+    border-top: 2px solid var(--navy); 
     padding-top: 30px; 
     margin-top: 30px; 
 }
@@ -1073,7 +1073,7 @@ input:checked + .switch--slider:before {
 }
 .t-btn, .p-tab { 
     padding: 10px 40px; 
-    border: 2px solid var(--blue); 
+    border: 2px solid var(--navy); 
     border-radius: 12px; 
     background: none; 
     font-weight: bold; 
@@ -1208,8 +1208,8 @@ input:checked + .slider:before { transform: translateX(18px); }
     width: 322px;
     height: 53px;
     background-color: var(--bg-blue);
-    border: 2px solid var(--border-blue);
-    border-radius: 12px;
+    border: 2px solid var(--navy);
+    border-radius: 15px;
     padding: 0 15px;
     display: flex;
     align-items: center;
@@ -2259,6 +2259,25 @@ input:checked + .slider:before { transform: translateX(18px); }
     .pricing--list__item {
         font-size: 18px;
     }
+    .main-card {
+        width: 880px;
+        padding: 25px;
+    }
+    .field--input {
+        width: 235px;
+        font-size: 12px;
+    }
+    .multiselect--dropdown, .select--dropdown {
+        width: 235px;
+    }
+    .promo--text, .switch--text, .agree-area--block {
+        font-size: 14px;
+    }
+    .promo--input {
+        width: 235px;
+        padding: 14px 23px;
+        font-size: 14px;
+    }
 }
 @media (max-width: 1100px) {
     .content--info {
@@ -2300,7 +2319,26 @@ input:checked + .slider:before { transform: translateX(18px); }
         width: 60px;
         height: 60px;
         font-size: 25px;
-}
+    }
+    .how-to-section h2 {
+        margin-bottom: 60px;
+    }
+    .booking--container {
+        display: block;
+    }
+    .field--group {
+        margin-bottom: 20px;
+    }
+    .main-card {
+        width: 800px;
+    }
+    .input-grid--1 {
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .step {
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -2315,6 +2353,77 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .tourist--right {
         transform: translateY(-10%);
+    }
+    .validate, select {
+        width: 200px;
+        font-size: 12px;
+    }
+    .calendar-wrapper {
+        width: 235px;
+        margin-right: 0px;
+    }
+    .tariff-selector, .pay-tabs {
+        gap: 100px;
+    }
+    .switch--slider:before {
+        height: 13px;
+        width: 13px;
+        bottom: 4.5px;
+    }
+    .main-card {
+        width: 700px;
+    }
+    .footer {
+        display: block;
+    }
+    .price-box {
+        margin-bottom: 20px;
+    }
+    .nav-right {
+        justify-content: space-between;
+    }
+    .promo--text, .switch--text, .agree-area--block {
+        font-size: 12px;
+    }
+}
+@media (max-width: 810px) {
+    .main-card {
+        width: 600px;
+    }
+    .tariff-selector, .pay-tabs {
+        gap: 60px;
+    }
+    .dayContainer {
+        width: 235px !important;
+        min-width: initial !important;
+        max-width: initial !important;
+    }
+    .flatpickr-months .flatpickr-month {
+        width: 235px !important;
+    }
+    .flatpickr-rContainer {
+        width: 235px;
+    }
+    .flatpickr-calendar.open {
+        width: 235px;
+    }
+    .field-group {
+        margin-bottom: 20px;
+    }
+    .checkout--container {
+        display: block;
+    }
+    .promo--label {
+        margin-bottom: 15px;
+    }
+    .promo--input {
+        margin-bottom: 10px;
+    }
+    .step span {
+        display: none;
+    }
+    .line {
+        margin-bottom: 10px;
     }
 }
 @media (max-width: 740px) {
@@ -2362,6 +2471,28 @@ input:checked + .slider:before { transform: translateX(18px); }
     .pricing--title {
         font-size: 30px;
     }
+    .btn-next {
+        padding: 10px 40px;
+        font-size: 18px;
+    }
+    .main-card {
+        width: 500px;
+    }
+    .tariff-selector, .pay-tabs {
+        gap: 10px;
+    }
+    .stepper {
+        margin-bottom: 30px;
+    }
+    .input-grid--1 {
+        display: block;
+    }
+    .field--input {
+        width: 100%;
+    }
+    .multiselect--dropdown, .select--dropdown {
+        width: 100%;
+    }
 }
 @media (max-width: 640px) {
     .how-to-section h2 {
@@ -2384,6 +2515,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .menu--socials {
         gap: 15px;
+    }
+    .main-card {
+        width: 420px;
+    }
+    .t-btn, .p-tab {
+        padding: 10px 26px;
     }
 }
 @media (max-width: 570px) {
@@ -2442,7 +2579,6 @@ input:checked + .slider:before { transform: translateX(18px); }
     .phone--block__number {
         font-weight: 600;
         font-size: 12px;
-        leading-trim: NONE;
         line-height: 100%;
         letter-spacing: 0%;
         text-align: center;
