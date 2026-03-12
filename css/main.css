@@ -1594,12 +1594,31 @@ input:checked + .slider:before { transform: translateX(18px); }
 }
                                                         /*travel-risks*/
 .travel-risks {
-    padding: 100px 20px;
+    padding: 100px 30px;
     background-color: #F5F5F5;
     position: relative;
     border-radius: 50px;
 }
-
+.video--title {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto' sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 55px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    margin-bottom: 78px;
+}
+.video--container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.video--content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
 .travel-risks .faq--content {
     gap: 80px;
 }
@@ -1607,11 +1626,11 @@ input:checked + .slider:before { transform: translateX(18px); }
 .travel-risks--text { flex: 1; }
 
 .travel-risks--video {
-    flex: 1.5;
     background: var(--color--accent-main);
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    width: 55%;
 }
 .risks--list {
     list-style: none; /* Прибираємо стандартні крапки браузера */
@@ -2284,6 +2303,19 @@ input:checked + .slider:before { transform: translateX(18px); }
     .faq--title {
         font-size: 34px;
     }
+    .travel-risks--video {
+        width: 45%;
+    }
+    .video--title {
+        font-size: 28px;
+        margin-bottom: 60px;
+    }
+    .travel-risks--text {
+        flex: none;
+    } 
+    .video--content {
+        justify-content: center;
+    }
 }
 @media (max-width: 1100px) {
     .content--info {
@@ -2301,6 +2333,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .faq--title {
         font-size: 30px;
+    }
+    .video--title {
+        font-size: 28px;
     }
 }
 @media (max-width: 1000px) {
@@ -2351,6 +2386,25 @@ input:checked + .slider:before { transform: translateX(18px); }
     .faq--title {
         font-size: 25px;
         margin-bottom: 30px;
+    }
+    .faq {
+        padding: 40px 20px;
+    }
+    .video--content {
+        display: flex;
+        flex-direction: column;
+    }
+    .risks--list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 20px;
+        gap: 5px;
+    }
+    .travel-risks--video {
+        width: 70%;
+    }
+    .video--content {
+        gap: 10px;
     }
 }
 
@@ -2512,6 +2566,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     .multiselect--dropdown, .select--dropdown {
         width: 100%;
     }
+    .risks--list {
+        display: flex;
+        flex-direction: column;
+    }
 }
 @media (max-width: 640px) {
     .how-to-section h2 {
@@ -2544,6 +2602,16 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .t-btn, .p-tab {
         padding: 10px 26px;
+    }
+    .travel-risks--video {
+        width: 100%;
+    }
+    .video--title {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+    .travel-risks {
+        padding: 50px 30px;
     }
 }
 @media (max-width: 570px) {
@@ -2665,6 +2733,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .accordion--item__title {
         font-size: 16px;
+    }
+    .risks--list li {
+    font-size: 15px;
     }
 }
 @media (max-width: 470px) {
