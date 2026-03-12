@@ -2278,6 +2278,9 @@ input:checked + .slider:before { transform: translateX(18px); }
         padding: 14px 23px;
         font-size: 14px;
     }
+    .benefits--grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 @media (max-width: 1100px) {
     .content--info {
@@ -2502,6 +2505,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     .step-text {
         font-size: 17px;
     }
+    .benefits--title {
+        font-size: 30px;
+        padding: 60px 15px 0;
+    }
 }
 @media (max-width: 600px) {
     .footer-grid-basic {
@@ -2569,6 +2576,18 @@ input:checked + .slider:before { transform: translateX(18px); }
     .step-item {
         gap: 10px;
     }
+    .benefit--item__img {
+        width: 80%;
+    }
+    .benefit--item {
+        gap: 10px;
+    }
+    .benefit--item__text {
+        font-size: 15px;
+    }
+    .benefits--title {
+        margin-bottom: 10px;
+    }
 }
 @media (max-width: 490px) {
     .header--logo {
@@ -2624,6 +2643,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .step-text {
         font-size: 14px;
+    }
+    .benefit--item {
+        padding: 50px 10px;
     }
 
 }
