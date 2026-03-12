@@ -2281,6 +2281,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .benefits--grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .faq--title {
+        font-size: 34px;
+    }
 }
 @media (max-width: 1100px) {
     .content--info {
@@ -2295,6 +2298,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .decor-img {
         top: 120%;
+    }
+    .faq--title {
+        font-size: 30px;
     }
 }
 @media (max-width: 1000px) {
@@ -2341,6 +2347,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .step {
         font-size: 10px;
+    }
+    .faq--title {
+        font-size: 25px;
+        margin-bottom: 30px;
     }
 }
 
@@ -2427,6 +2437,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .line {
         margin-bottom: 10px;
+    }
+    .faq--title-box {
+        display: flex;
+    }
+    .faq--content {
+        flex-direction: column;
     }
 }
 @media (max-width: 740px) {
@@ -2647,7 +2663,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .benefit--item {
         padding: 50px 10px;
     }
-
+    .accordion--item__title {
+        font-size: 16px;
+    }
 }
 @media (max-width: 470px) {
     .step-item {
@@ -2666,6 +2684,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .t-btn, .p-tab {
         font-size: 10px;
+    }
+    .accordion--item__title {
+        font-size: 13px;
     }
 }
 @media (max-width: 410px) {
