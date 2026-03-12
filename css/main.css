@@ -1939,7 +1939,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     color: var(--color--text);
     margin-bottom: 78px;
 }
-
+.is--all-mobal {
+    display: none;
+}
 /* Налаштування декоративних картинок */
 .faq-list--decor {
     position: absolute;
@@ -1998,6 +2000,7 @@ input:checked + .slider:before { transform: translateX(18px); }
     border-bottom: 2px solid #242424;
     transform: rotate(45deg);
     transition: transform 0.3s;
+    padding-left: 5px;
 }
 
 /* Коли відкрито */
@@ -2309,12 +2312,25 @@ input:checked + .slider:before { transform: translateX(18px); }
 }
 
                                                     /* Responsive */
+@media (max-width: 1920px) {
+}
 @media (max-width: 1700px) {
     .header--menu {
         padding: 0 200px;
     }
     .tourist {
         padding: 0 200px;
+    }
+    .is--right {
+        width: 270px;
+    }
+}
+@media (max-width: 1500px) {
+    .is--right {
+        width: 230px;
+    }
+    .is--left {
+        width: 200px;
     }
 }
 @media (max-width: 1430px) {
@@ -2323,6 +2339,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .decor-img {
         top: 520px;
+    }
+    .is--right {
+        width: 180px;
     }
 }
 @media (max-width: 1400px) {
@@ -2347,6 +2366,13 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .tourist--left {
         z-index: 999;
+    }
+    .is--left {
+        width: 220px;
+        top: -185px;
+    }
+    .is--right {
+        display: none;
     }
 }
 @media (max-width: 1300px) {
@@ -2445,6 +2471,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     .reviews--quote span {
         font-size: 17px;
     }
+    .faq-list--title {
+        font-size: 35px;
+        margin-bottom: 74px;
+    }
 }
 @media (max-width: 1000px) {
     .step-item {
@@ -2525,6 +2555,48 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .reviews--quote span {
         font-size: 17px;
+    }
+    .faq-list--container {
+        margin: 0 50px;
+    }
+    .is--left {
+        display: none;
+    }
+    .faq-list {
+        padding: 20px 20px;
+    }
+    .faq-list--title {
+        margin-bottom: 30px;
+    }
+    /* Батьківський контейнер всієї секції FAQ */
+    .faq-list { 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden; /* Щоб розмиті краї не давали скрол */
+    }
+
+    .faq-list--title__block {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+    }
+    /* Твоя картинка */
+    .is--all-mobal {
+        display: block;
+        width: 100%;
+        max-width: 500px; /* Обмежуємо, щоб не розповзлася */
+        height: auto;
+        position: relative;
+        z-index: 1; /* Найнижчий шар */
+        margin-bottom: -80px; /* КЛЮЧОВИЙ МОМЕНТ: затягуємо нижній блок на картинку */
+        pointer-events: none;
+    }
+    /* Блок з питаннями (біла картка) */
+    .faq-list--container {
+        position: relative;
+        z-index: 2; /* Вище за картинку */
     }
 }
 
@@ -2647,6 +2719,9 @@ input:checked + .slider:before { transform: translateX(18px); }
         width: 70px;
         height: 70px;
     }
+    .faq-list--text {
+        font-size: 14px;
+    }
 }
 @media (max-width: 740px) {
     .header--menu {
@@ -2734,6 +2809,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .reviews--visual {
         width: 370px;
         height: 370px;
+    }
+    .faq-list--container {
+        margin: 0 10px;
     }
 }
 @media (max-width: 640px) {
@@ -2837,6 +2915,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     .benefits--title {
         margin-bottom: 10px;
     }
+    .faq-list--text {
+        font-size: 13px;
+    }
+    .faq-list--body p {
+    font-size: 13px;
+    }
 }
 @media (max-width: 490px) {
     .header--logo {
@@ -2927,6 +3011,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .reviews--visual {
         width: 320px;
         height: 320px;
+    }
+    .subscribe-form-basic {
+        flex-direction: column;
     }
 }
 @media (max-width: 410px) {
