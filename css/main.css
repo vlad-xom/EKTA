@@ -1060,6 +1060,7 @@ input:checked + .switch--slider:before {
     color: white; 
     padding: 15px 25px; 
     border-radius: 15px; 
+    margin-right: 10px;
 }
 .btn-next { background: var(--navy); color: white; border: none; padding: 15px 60px; border-radius: 15px; font-size: 24px; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(0,76,109,0.3); }
 .btn-back { background: none; border: none; color: var(--blue); font-size: 22px; cursor: pointer; display: none; margin-right: 20px; }
@@ -2430,6 +2431,9 @@ input:checked + .slider:before { transform: translateX(18px); }
         width: 450px;
         height: 450px;
     }
+    .validate-2 {
+        width: 250px;
+    }
 }
 @media (max-width: 1100px) {
     .content--info {
@@ -2722,6 +2726,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .faq-list--text {
         font-size: 14px;
     }
+    .validate-2 {
+        width: 185px;
+    }
 }
 @media (max-width: 740px) {
     .header--menu {
@@ -2813,6 +2820,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     .faq-list--container {
         margin: 0 10px;
     }
+    .input-grid--2 {
+        margin-bottom: 35px;
+    }
+    .validate-2 {
+        width: 155px;
+    }
 }
 @media (max-width: 640px) {
     .how-to-section h2 {
@@ -2856,6 +2869,26 @@ input:checked + .slider:before { transform: translateX(18px); }
     .travel-risks {
         padding: 50px 30px;
     }
+    .input-grid--2 {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .validate-2 {
+        width: 100%;
+    }
+    .btn-back {
+        font-size: 20px;
+    }
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .summary-cards {
+        font-size: 13px;
+    }
+    .card-visual {
+        width: 370px;
+    }
 }
 @media (max-width: 570px) {
     .header--logo {
@@ -2890,6 +2923,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .t-btn, .p-tab {
         padding: 10px 20px;
         font-size: 15px;
+    }
+    .card-visual {
+        width: 330px;
     }
 }
 @media (max-width: 530px) {
@@ -2984,7 +3020,10 @@ input:checked + .slider:before { transform: translateX(18px); }
         font-size: 16px;
     }
     .risks--list li {
-    font-size: 15px;
+        font-size: 15px;
+    }
+    .tourist-table {
+        font-size: 13px;
     }
 }
 @media (max-width: 470px) {
@@ -3014,6 +3053,11 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .subscribe-form-basic {
         flex-direction: column;
+    }
+    .card-visual {
+        width: 270px;
+        padding: 25px;
+        justify-content: space-evenly;
     }
 }
 @media (max-width: 410px) {

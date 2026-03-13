@@ -815,14 +815,14 @@
 
             <div class="form-panel" id="panel-2">
                 <div class="input-grid--2">
-                    <div class="field-group"><label>Имя</label><input type="text" placeholder="IVAN" class="validate latin" id="f_name"><div class="err-text">Только латиница</div></div>
-                    <div class="field-group"><label>Фамилия</label><input type="text" placeholder="IVANOV" class="validate latin" id="f_surname"><div class="err-text">Только латиница</div></div>
-                    <div class="field-group"><label>Дата рождения</label><input type="text" placeholder="ДД.ММ.РРРР" class="validate" id="f_dob"></div>
+                    <div class="field-group"><label>Имя</label><input type="text" placeholder="IVAN" class="validate latin validate-2" id="f_name"><div class="err-text">Только латиница</div></div>
+                    <div class="field-group"><label>Фамилия</label><input type="text" placeholder="IVANOV" class="validate latin validate-2" id="f_surname"><div class="err-text">Только латиница</div></div>
+                    <div class="field-group"><label>Дата рождения</label><input type="text" placeholder="ДД.ММ.РРРР" class="validate validate-2" id="f_dob"></div>
                 </div>
                 <div class="input-grid--2">
-                    <div class="field-group"><label>Паспорт</label><input type="text" placeholder="FA 000000" class="validate" id="f_pass"></div>
-                    <div class="field-group"><label>Телефон</label><input type="text" placeholder="+380..." class="validate"></div>
-                    <div class="field-group"><label>E-mail</label><input type="email" placeholder="mail@test.com" class="validate" id="f_email"></div>
+                    <div class="field-group"><label>Паспорт</label><input type="text" placeholder="FA 000000" class="validate validate-2" id="f_pass"></div>
+                    <div class="field-group"><label>Телефон</label><input type="text" placeholder="+380..." class="validate validate-2"></div>
+                    <div class="field-group"><label>E-mail</label><input type="email" placeholder="mail@test.com" class="validate validate-2" id="f_email"></div>
                 </div>
             </div>
 
@@ -872,7 +872,7 @@
                 </div>
                 <div class="nav-right">
                     <div class="agree-area--block" id="agree-area"style="margin-bottom:15px">
-                        <label><input type="checkbox" id="agree_check"> Принимаю условия договора</label>
+                        <label><input class="agree_check-all" type="checkbox" id="agree_check"> Принимаю условия договора</label>
                     </div>
                     <div class="btns">
                         <button type="button" id="btnBack" class="btn-back">Назад</button>
