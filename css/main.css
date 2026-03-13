@@ -1062,8 +1062,42 @@ input:checked + .switch--slider:before {
     border-radius: 15px; 
     margin-right: 10px;
 }
-.btn-next { background: var(--navy); color: white; border: none; padding: 15px 60px; border-radius: 15px; font-size: 24px; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(0,76,109,0.3); }
-.btn-back { background: none; border: none; color: var(--blue); font-size: 22px; cursor: pointer; display: none; margin-right: 20px; }
+.btn-next { 
+    background: var(--navy); 
+    color: white; 
+    border: none; 
+    padding: 15px 60px; 
+    border-radius: 15px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 0 10px 20px rgba(0,76,109,0.3); 
+    transition: all 0.3s ease;
+    border: 2px solid var(--navy);
+}
+.btn-next:hover {
+    background: var(--color--white);
+    color: var(--navy);
+    /* Зміна тіні при наведенні для ефекту "підняття" */
+    box-shadow: 0 15px 25px rgba(0, 76, 109, 0.2);
+    transform: translateY(-2px);
+}
+.btn-back { 
+    background: none; 
+    border: 2px solid var(--navy); 
+    color: var(--blue); 
+    font-size: 22px; 
+    cursor: pointer; 
+    padding: 5px 10px;
+    display: none; 
+    margin-right: 20px; 
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+.btn-back:hover {
+    background-color: var(--navy);
+    color: var(--color--white);
+}
 
 /* TARIFFS & TABS */
 .tariff-selector, .pay-tabs { 
