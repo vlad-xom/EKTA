@@ -929,8 +929,8 @@ font-family: "Open Sans", sans-serif;
 
 .promo--input {
   width: 322px;
-  padding: 20px 23px;
-  border: 2px solid var(--blue);
+  padding: 16px;
+  border: 2px solid var(--navy);
   border-radius: 10px;
   background-color: #e1f3fd;
   outline: none;
@@ -1307,10 +1307,12 @@ input:checked + .slider:before { transform: translateX(18px); }
   transition: all 0.3s ease;
 }
 .select--option:hover {
-    background-color: var(--bg-blue);
+    background-color: var(--navy);
+    color: var(--color--white);
 }
 .multiselect--option:hover {
-  background-color: var(--bg-blue);
+  background-color: var(--navy);
+  color: var(--color--white);
 }
 
 .multiselect--option input {
@@ -1371,8 +1373,10 @@ input:checked + .slider:before { transform: translateX(18px); }
 
 /* Стан відкритого списку */
 .multiselect--dropdown.is-active {
-    max-height: 300px; /* Достатньо велика висота для списку */
+    max-height: max-content; /* Достатньо велика висота для списку */
     opacity: 1;
+    padding: 0;
+    width: 100%;
 }
 .select--dropdown {
     /* Ховаємо блок */
@@ -1398,8 +1402,9 @@ input:checked + .slider:before { transform: translateX(18px); }
 
 /* Клас, який ми додаємо через JS */
 .select--dropdown.is-open {
-    max-height: 200px; /* Достатня висота */
+    max-height: max-content; /* Достатня висота */
     opacity: 1;
+    padding: 0;
 }
 /* Червона рамка, якщо поле не пройшло валідацію */
 .group__invalid .field--input, 
@@ -2329,7 +2334,7 @@ input:checked + .slider:before { transform: translateX(18px); }
     position: absolute;
     top: 40px;
     right: 30px;
-    background: #f8f8f8;
+    background: var(--bg-blue);
     border: none;
     width: 45px;
     height: 45px;
