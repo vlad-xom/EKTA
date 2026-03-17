@@ -43,9 +43,17 @@ font-family: "Roboto", sans-serif;
 /*Open-sans
 font-family: "Open Sans", sans-serif;
 */
-
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh; /* Фіксуємо висоту екрану */
+}
 .hero--section {
     background: var(--gradient--header);
+}
+.hero--section {
+    width: 100%;
+    height: 100vh;      /* Запасний варіант для старих браузерів */
+    height: 100dvh;     /* Динамічна висота для сучасних мобільних пристроїв */
 }
 
 .header--menu {
@@ -646,13 +654,12 @@ font-family: "Open Sans", sans-serif;
 .accordion--content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding-left: 30px;
+    transition: max-height 0.7s ease-out;
 }
 
 .accordion--content p {
     font-size: 14px;
-    color: #777;
+    color: #B3B3B3;
     margin: 5px 0;
 }
 
@@ -701,6 +708,52 @@ font-family: "Open Sans", sans-serif;
 .card--max__button:hover {
     background-color: var(--color--white);
     color: var(--color--card--max);
+}
+/* Прибираємо стандартні маркери, які можуть конфліктувати */
+.accordion--inner-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 10px 9px;
+}
+
+.accordion--inner-list li {
+    position: relative;
+    padding-left: 20px; /* Місце для нашої точки */
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--color--text);
+    display: block !important;
+}
+
+/* Малюємо точку через ::before */
+.accordion--inner-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px; /* Центруємо точку по висоті рядка */
+    width: 6px;
+    height: 6px;
+    background-color: #333; /* Колір точки */
+    border-radius: 50%; /* Робимо її круглою */
+}
+
+/* Для неактивних пунктів (сірих) */
+.accordion--inner-list li.is--disabled-text {
+    color: #676161;
+}
+.accordion--inner-list li.is--disabled-text::before {
+    background-color: #ccc;
+}
+.is--disabled-text {
+    text-decoration: line-through; /* Саме ця властивість перекреслює текст */                  /* Робимо текст світло-сірим */
+}
+.is--disabled-text::before {
+    background-color: #ccc;
+    text-decoration: none !important; /* Щоб сама точка не була перекреслена */
+}
+.accordion--content {
+    max-width: max-content;
 }
                                                                 /*forms*/
 /* Головний контейнер секції */
@@ -2382,6 +2435,12 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .is--right {
         width: 180px;
+    }
+    .list--benefits {
+        margin-bottom: 40px;
+    }
+    .header--menu {
+        margin-bottom: 100px;
     }
 }
 @media (max-width: 1400px) {

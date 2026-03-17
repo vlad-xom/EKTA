@@ -17,20 +17,29 @@ window.onclick = function(event) {
 function toggleMainMenu() {
     const btn = document.getElementById('menuBtn');
     const dropdown = document.getElementById('menuDropdown');
-    
-    // Перемикаємо класи для анімації кнопки та показу меню
+    const body = document.body; // Додаємо посилання на body
+
     btn.classList.toggle('is--active');
     dropdown.classList.toggle('is--open');
+
+    // Якщо меню має клас is--open, додаємо заборону скролу
+    if (dropdown.classList.contains('is--open')) {
+        body.classList.add('no-scroll');
+    } else {
+        body.classList.remove('no-scroll');
+    }
 }
 
-// Закриття меню, якщо клікнути за його межами
+// Оновлюємо також закриття при кліку повз меню
 window.addEventListener('click', function(e) {
     const btn = document.getElementById('menuBtn');
     const dropdown = document.getElementById('menuDropdown');
+    const body = document.body;
     
     if (!btn.contains(e.target) && !dropdown.contains(e.target)) {
         btn.classList.remove('is--active');
         dropdown.classList.remove('is--open');
+        body.classList.remove('no-scroll'); // Повертаємо скрол
     }
 });
 //
@@ -67,30 +76,44 @@ function showVideo(videoId) {
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vs-xEc1AlLw?si=AtTQ4rm94NKr9uqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     `;
 }
-//
-function toggleFAQ(element) {
-    const parent = element.parentElement;
-    parent.classList.toggle('is--open');
-    
-    const body = parent.querySelector('.faq-list--body');
-    if (parent.classList.contains('is--open')) {
-        body.style.maxHeight = body.scrollHeight + "px";
-    } else {
-        body.style.maxHeight = null;
-    }
-}
-////
-const promoToggle = document.getElementById('promo-toggle');
-const promoField = document.getElementById('promo-field');
+//Акордеон блок старт стандарт макс <
+document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.accordion--trigger');
 
-promoToggle.addEventListener('change', function() {
-  if (this.checked) {
-    promoField.style.display = 'block';
-  } else {
-    promoField.style.display = 'none';
-  }
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', function(e) {
+            // Зупиняємо розповсюдження події, щоб не було конфліктів
+            e.stopPropagation();
+
+            const currentItem = this.parentElement;
+            const currentContent = currentItem.querySelector('.accordion--content');
+            const parentList = currentItem.closest('.pricing--list');
+            
+            // КЛЮЧОВИЙ МОМЕНТ: перевіряємо стан ДО того, як все закриємо
+            const wasOpen = currentItem.classList.contains('is--open');
+
+            // 1. Закриваємо абсолютно всі відкриті пункти в цій картці
+            const allItems = parentList.querySelectorAll('.accordion--item-card');
+            allItems.forEach(item => {
+                item.classList.remove('is--open');
+                const content = item.querySelector('.accordion--content');
+                if (content) {
+                    content.style.maxHeight = null;
+                    content.style.opacity = "0";
+                }
+            });
+
+            // 2. Якщо пункт НЕ був відкритий — відкриваємо його
+            // Якщо ВІН БУВ відкритий — ми його вже закрили вище, і він залишиться закритим
+            if (!wasOpen) {
+                currentItem.classList.add('is--open');
+                currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+                currentContent.style.opacity = "1";
+            }
+        });
+    });
 });
-////
+//Акордеон блок старт стандарт макс >
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Ініціалізація календаря
     const fp = flatpickr("#f_date", {
@@ -294,15 +317,4 @@ document.getElementById('btnNext').addEventListener('click', function() {
 // Додаємо слухачі на зміни
 [fDate, tripWrapper.querySelector('input')].forEach(el => el.addEventListener('input', validateAll));
 countryCheckboxes.forEach(cb => cb.addEventListener('change', validateAll));
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const triggers = document.querySelectorAll('.accordion--trigger');
-
-    triggers.forEach(trigger => {
-        trigger.addEventListener('click', function() {
-            const item = this.parentElement;
-            item.classList.toggle('is--open');
-        });
-    });
-});
+//
