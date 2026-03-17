@@ -55,26 +55,31 @@ window.addEventListener('click', function(event) {
         container.classList.remove('is--open');
     }
 });
-//
+//faq акордеон <
 function toggleAccordion(header) {
     const item = header.parentElement;
     const container = item.parentElement;
+    const body = item.querySelector('.accordion--item__body');
     
-    // Якщо хочеш, щоб одночасно був відкритий лише один пункт:
+    // 1. Закриваємо всі інші пункти та скидаємо їхню висоту
     const allItems = container.querySelectorAll('.accordion--item');
     allItems.forEach(i => {
-        if (i !== item) i.classList.remove('is--open');
+        if (i !== item) {
+            i.classList.remove('is--open');
+            const iBody = i.querySelector('.accordion--item__body');
+            if (iBody) iBody.style.maxHeight = null;
+        }
     });
 
-    // Перемикаємо поточний
-    item.classList.toggle('is--open');
-}
-//
-function showVideo(videoId) {
-    const container = document.getElementById('videoContainer');
-    container.innerHTML = `
-<iframe width="560" height="315" src="https://www.youtube.com/embed/vs-xEc1AlLw?si=AtTQ4rm94NKr9uqW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    `;
+    // 2. Перемикаємо поточний пункт
+    const isOpen = item.classList.toggle('is--open');
+
+    // 3. Якщо відкрили — ставимо точну висоту в пікселях, якщо закрили — null
+    if (isOpen) {
+        body.style.maxHeight = body.scrollHeight + "px";
+    } else {
+        body.style.maxHeight = null;
+    }
 }
 //Акордеон блок старт стандарт макс <
 document.addEventListener('DOMContentLoaded', () => {
@@ -318,3 +323,70 @@ document.getElementById('btnNext').addEventListener('click', function() {
 [fDate, tripWrapper.querySelector('input')].forEach(el => el.addEventListener('input', validateAll));
 countryCheckboxes.forEach(cb => cb.addEventListener('change', validateAll));
 //
+//відео екта <
+function playLocalVideo() {
+    const container = document.getElementById('videoContainer');
+    const video = document.getElementById('mainVideo');
+    const poster = document.getElementById('videoPoster');
+    const btn = document.getElementById('playBtn');
+
+    // Додаємо клас для CSS анімацій
+    container.classList.add('is--playing');
+    
+    // Показуємо відео та запускаємо його
+    video.style.display = 'block';
+    video.play();
+    
+    // Додаємо атрибут controls після запуску, щоб з'явилася шкала часу
+    video.setAttribute('controls', 'true');
+
+    // Додатково: якщо відео закінчилося — повертаємо постер
+    video.onended = function() {
+        container.classList.remove('is--playing');
+        video.style.display = 'none';
+        video.removeAttribute('controls');
+    };
+}
+//відео екта >
+document.addEventListener('DOMContentLoaded', () => {
+    const orbitUsers = document.querySelectorAll('.orbits--user:not(.user--center)');
+    const centerUserBox = document.getElementById('centerUser');
+    const centerImg = centerUserBox.querySelector('img');
+    const card = document.getElementById('reviewCard');
+    const cardText = document.getElementById('reviewText');
+    const cardAuthor = document.getElementById('reviewAuthor');
+
+    orbitUsers.forEach(user => {
+        user.addEventListener('click', function() {
+            // Щоб уникнути зайвих спрацювань під час анімації
+            if (centerUserBox.style.opacity === '0') return;
+
+            const clickedImg = this.querySelector('img');
+            
+            // 1. Починаємо плавне зникнення центру та тексту
+            centerUserBox.style.opacity = '0';
+            card.classList.add('is--switching');
+
+            setTimeout(() => {
+                // 2. Зберігаємо дані старого центру
+                const oldCenterSrc = centerImg.src;
+                const oldCenterName = cardAuthor.innerText;
+                const oldCenterReview = cardText.innerText;
+
+                // 3. Ставимо в центр дані того, на кого натиснули
+                centerImg.src = clickedImg.src;
+                cardAuthor.innerText = this.getAttribute('data-name');
+                cardText.innerText = this.getAttribute('data-review');
+
+                // 4. Повертаємо старого центрального на орбіту (рокіровка)
+                clickedImg.src = oldCenterSrc;
+                this.setAttribute('data-name', oldCenterName);
+                this.setAttribute('data-review', oldCenterReview);
+
+                // 5. Плавно вмикаємо видимість назад
+                centerUserBox.style.opacity = '1';
+                card.classList.remove('is--switching');
+            }, 400); // Час збігається з CSS transition
+        });
+    });
+});
