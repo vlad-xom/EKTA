@@ -390,3 +390,75 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+//faq-list випадающі списки 
+function toggleFAQ(header) {
+    const item = header.parentElement;
+    const container = item.parentElement;
+    const body = item.querySelector('.faq-list--body');
+    
+    // 1. Шукаємо всі інші відкриті пункти і закриваємо їх
+    const allItems = container.querySelectorAll('.faq-list--item');
+    allItems.forEach(i => {
+        if (i !== item) {
+            i.classList.remove('is--open');
+            const iBody = i.querySelector('.faq-list--body');
+            if (iBody) iBody.style.maxHeight = null;
+        }
+    });
+
+    // 2. Перемикаємо стан поточного пункту
+    const isOpen = item.classList.toggle('is--open');
+
+    // 3. Якщо відкрили — вираховуємо висоту, якщо закрили — скидаємо в 0
+    if (isOpen) {
+        body.style.maxHeight = body.scrollHeight + "px";
+    } else {
+        body.style.maxHeight = null;
+    }
+}
+//скрол в футері до обєктів 
+const footerLinks = document.querySelectorAll('.footer--link__basic');
+
+footerLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+
+        // ПЕРЕВІРКА: якщо це не якір (не починається з #), нічого не робимо через цей скрипт
+        if (!href || !href.startsWith('#')) {
+            return; 
+        }
+
+        // Якщо це якір, робимо плавний скрол
+        e.preventDefault();
+        const targetBlock = document.querySelector(href);
+        
+        if (targetBlock) {
+            targetBlock.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+//футер контакт список вип
+document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.getElementById('contactTrigger');
+    const dropdown = document.getElementById('contactDropdown');
+    const closeBtn = document.getElementById('contactClose');
+
+    trigger.addEventListener('click', (e) => {
+        e.stopPropagation(); // Важливо, щоб клік не прокидався далі
+        dropdown.classList.toggle('is--visible');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        dropdown.classList.remove('is--visible');
+    });
+
+    // Закриття при кліку в будь-якому іншому місці
+    document.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target) && e.target !== trigger) {
+            dropdown.classList.remove('is--visible');
+        }
+    });
+});

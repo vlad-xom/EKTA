@@ -36,6 +36,9 @@
 body {
     font-family: "Open Sans", sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 /*Roboto
 font-family: "Roboto", sans-serif;
 */
@@ -317,8 +320,8 @@ body.no-scroll {
     color: var(--color--white);
 }
 .lang--item__flag {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -336,6 +339,8 @@ body.no-scroll {
     visibility: visible;       /* Дозволяємо взаємодію */
     transform: translateY(0);  /* Повертаємо на місце */
     pointer-events: auto;      /* Дозволяємо клікати по мовах */
+    width: 572px;
+    height: 485px;
 }
 
 .header--lang.is--open .lang--current__arrow img {
@@ -1559,7 +1564,7 @@ input:checked + .slider:before { transform: translateX(18px); }
     font-family: Open Sans;
     font-weight: 400;
     font-size: 18px;
-    line-height: 100%;
+    line-height: 27px;
     letter-spacing: 0%;
     text-align: center;
 }
@@ -2191,7 +2196,7 @@ input:checked + .slider:before { transform: translateX(18px); }
 .faq-list--body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.7s ease-out;
     color: #555;
 }
 .faq-list--body p {
@@ -2278,25 +2283,33 @@ input:checked + .slider:before { transform: translateX(18px); }
     list-style: none;
     padding: 0;
 }
+.footer--list__basic {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
 
 .footer-list-basic li {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .footer-link-basic {
-    color: white;
+    color: var(--color--white);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     opacity: 0.9;
 }
-
-.footer-link-basic:hover {
-    text-decoration: underline;
+.footer--link__basic {
+    color: var(--color--white);
+    font-size: 18px;
 }
 
 .contact-text-basic {
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.contact-text-basic a {
+    color: var(--color--white);
 }
 
 /* Subscription */
@@ -2350,6 +2363,60 @@ input:checked + .slider:before { transform: translateX(18px); }
     padding: 20px;
     background-color: rgba(0,0,0,0.1);
     font-size: 13px;
+}
+.footer--item__rel {
+    position: relative; /* База для випадання */
+}
+
+.footer--contact__dropdown {
+    position: absolute;
+    bottom: 110%; /* З’являється НАД посиланням (10% запас) */
+    left: 50%;
+    transform: translateX(-50%) translateY(20px); /* Початковий зсув вниз для ефекту випливання */
+    
+    width: 250px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.15); /* Тінь тепер "світить" вгору */
+    border: 1px solid #eee;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    padding: 20px;
+}
+
+/* Клас активного стану */
+.footer--contact__dropdown.is--visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0); /* Повертається в нормальну позицію */
+}
+
+/* Колір тексту, щоб не було білого на білому */
+.footer--contact__title {
+    color: var(--color--text);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer--contact__content p {
+    color: var(--color--text);
+    font-size: 14px;
+    margin: 5px 0;
+}
+.footer--contact__link {
+    color: #004c6d;
+}
+
+.footer--contact__close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ccc;
 }
                                                     /* ВЕРХНІЙ ФУТЕР */
 .menu--dropdown {
@@ -2787,12 +2854,12 @@ input:checked + .slider:before { transform: translateX(18px); }
         position: relative;
         z-index: 2; /* Вище за картинку */
     }
-}
-
-@media (max-width: 900px) {
     .footer-grid-basic {
         grid-template-columns: 1fr 1fr;
     }
+}
+
+@media (max-width: 900px) {
     .header--rating {
         display: none;;
     }
@@ -3024,6 +3091,9 @@ input:checked + .slider:before { transform: translateX(18px); }
         font-size: 30px;
         padding: 60px 15px 0;
     }
+    .contact-text-basic {
+        font-size: 15px;
+    }
 }
 @media (max-width: 600px) {
     .footer-grid-basic {
@@ -3073,6 +3143,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .card-visual {
         width: 370px;
+    }
+    .contact-text-basic {
+        font-size: 18px;
     }
 }
 @media (max-width: 570px) {
