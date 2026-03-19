@@ -228,7 +228,7 @@ body.no-scroll {
     font-weight: 600;
     line-height: 100%;
     letter-spacing: 0%;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 .dropdown--list__item:hover {
@@ -237,8 +237,10 @@ body.no-scroll {
 
 /* Стан при кліку (активується через JS) */
 .phone--block.is--active .dropdown--list {
-    display: block;
+    display: flex;
     z-index: 1000;
+    flex-direction: column;
+    justify-content: center;
 }
                                                                 /*header--lang*/
 .header--lang {
@@ -293,7 +295,7 @@ body.no-scroll {
     opacity: 0;                      /* Спочатку невидиме */
     visibility: hidden;              /* Повністю ховаємо від взаємодії */
     transform: translateY(-10px);    /* Трішки зміщуємо вгору для ефекту випливання */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* М'яка анімація */
+    transition: all 0.5s; /* М'яка анімація */
     pointer-events: none;            /* Щоб не можна було клікнути на невидиме меню */
 }
 
@@ -340,7 +342,6 @@ body.no-scroll {
     transform: translateY(0);  /* Повертаємо на місце */
     pointer-events: auto;      /* Дозволяємо клікати по мовах */
     width: 572px;
-    height: 485px;
 }
 
 .header--lang.is--open .lang--current__arrow img {
@@ -2250,18 +2251,23 @@ input:checked + .slider:before { transform: translateX(18px); }
 }
 
 .trust-item-basic p {
-    font-size: 13px;
-    margin-top: 5px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    width: 270px;
 }
 
 .trust-brand-basic {
     font-weight: bold;
     font-size: 18px;
+    margin-bottom: 40px;
 }
 
 .footer-divider-basic {
     border: 0;
-    border-top: 1px solid rgba(255,255,255,0.3);
+    border-top: 2px solid var(--color--white);
     margin: 30px 0;
 }
 
@@ -2328,6 +2334,7 @@ input:checked + .slider:before { transform: translateX(18px); }
     border: 2px solid var(--blue);
     padding-right: 10px;
     color: var(--color--text);
+    cursor: pointer;
 }
 
 .subscribe-btn-basic {
