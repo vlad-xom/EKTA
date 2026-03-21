@@ -462,3 +462,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+//зміна мови футер 
+const langBtn = document.getElementById('lang-trigger');
+
+langBtn.addEventListener('click', function(e) {
+    // Щоб вікно не закривалося при натисканні на самі мови всередині
+    if (e.target.closest('.language-dropdown--list__container')) return;
+    
+    this.classList.toggle('active__open');
+});
+
+// Закриття, якщо клікнули повз
+document.addEventListener('click', (e) => {
+    if (!langBtn.contains(e.target)) {
+        langBtn.classList.remove('active__open');
+    }
+});

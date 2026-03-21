@@ -2425,6 +2425,120 @@ input:checked + .slider:before { transform: translateX(18px); }
     font-size: 20px;
     color: #ccc;
 }
+/* Батьківський контейнер (блакитна лінія) */
+.footer-header--basic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 60px;
+}
+
+/* Заголовок */
+.footer-title--basic {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Контейнер вибору мови */
+.language-select--basic {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.language-select--basic img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* Стрілка */
+.arrow-down--basic {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.5s ease;
+}
+
+/* Поворот стрілки при відкритті */
+.language-select--basic.active__open .arrow-down--basic {
+    transform: rotate(-135deg);
+}
+
+/* ВИПАДАЮЧЕ ВІКНО (ВНИЗ) */
+.language-dropdown--list__container {
+    position: absolute;
+    top: calc(100% + 15px); /* Випадає вниз */
+    right: 0; /* Притискається до правого краю кнопки */
+    background: white;
+    width: 460px; /* Ширина як на фото */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 100;
+
+    /* Плавність */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Сітка для мов (5 колонок) */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+}
+
+/* Показ вікна */
+.language-select--basic.active__open .language-dropdown--list__container {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.language-dropdown--list__container {
+    width: 572px;
+}
+
+/* Окремі мови в списку */
+.language-option--item__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+    font-size: 14px;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.language-option--item__link:hover {
+    background: #f0f0f0;
+}
+
+/* Жовта активна мова як на скрині */
+.language-option--item__link.is-active--selected {
+    background: #ffcc00;
+    font-weight: 600;
+}
+
+.language-option--item__link img {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
                                                     /* ВЕРХНІЙ ФУТЕР */
 .menu--dropdown {
     position: fixed;
@@ -3026,6 +3140,16 @@ input:checked + .slider:before { transform: translateX(18px); }
     .card--text {
         font-size: 14px;
     }
+    .lang--item__name {
+        font-size: 17px;
+    }
+    .language-dropdown--list__container {
+        width: 500px;
+    }
+    .language-select--basic img {
+        width: 15px;
+        height: 15px;
+    }
 }
 @media (max-width: 700px) {
     .tourist--right {
@@ -3154,6 +3278,9 @@ input:checked + .slider:before { transform: translateX(18px); }
     .contact-text-basic {
         font-size: 18px;
     }
+    .language-dropdown--list__container {
+        width: 440px;
+    }
 }
 @media (max-width: 570px) {
     .header--logo {
@@ -3220,7 +3347,12 @@ input:checked + .slider:before { transform: translateX(18px); }
         font-size: 13px;
     }
     .faq-list--body p {
-    font-size: 13px;
+        font-size: 13px;
+    }
+    .language-dropdown--list__container {
+        gap: 8px;
+        padding: 13px;
+        width: 415px;
     }
 }
 @media (max-width: 490px) {
@@ -3289,6 +3421,10 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .tourist-table {
         font-size: 13px;
+    }
+    .language-dropdown--list__container {
+        grid-template-columns: repeat(3, 1fr);
+        width: 285px;
     }
 }
 @media (max-width: 470px) {
