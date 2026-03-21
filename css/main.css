@@ -2216,7 +2216,7 @@ input:checked + .slider:before { transform: translateX(18px); }
 .footer-container-basic {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 28px;
 }
 
 .footer-header-basic {
@@ -2538,6 +2538,11 @@ input:checked + .slider:before { transform: translateX(18px); }
     width: 18px;
     height: 18px;
     border-radius: 50%;
+}
+.footer-logo--mobile__show {
+    display: none;
+    height: 30px; /* Налаштуйте висоту під свій логотип */
+    width: auto;
 }
                                                     /* ВЕРХНІЙ ФУТЕР */
 .menu--dropdown {
@@ -3280,6 +3285,23 @@ input:checked + .slider:before { transform: translateX(18px); }
     }
     .language-dropdown--list__container {
         width: 440px;
+    }
+    .footer-title--basic {
+        display: none;
+    }
+
+    /* Показуємо логотип */
+    .footer-logo--mobile__show {
+        display: block;
+        width: 100px;
+        height: 50px;
+    }
+
+    /* Додатково: зменшуємо ширину випадаючого списку, щоб він вліз у мобільний екран */
+    .language-dropdown--list__container {
+        width: 280px; 
+        grid-template-columns: repeat(3, 1fr); /* 3 колонки замість 5 */
+        right: -10px; /* Трохи зміщуємо, щоб не вилазило за край */
     }
 }
 @media (max-width: 570px) {
