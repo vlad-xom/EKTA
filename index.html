@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
     <title>Ekta Traveling Insurance | The Best Choice for Your Trip</title>
 </head>
 <body>
@@ -1010,206 +1012,456 @@
 
     </div>
 </section>
-<section class="how-to-section">
-    <img src="img/forms-img-left.svg" alt="Calculator decor" class="decor-img decor-left">
-    <img src="img/forms-img-right.svg" alt="Phone decor" class="decor-img decor-right">
 
-    <h2>Как оформить туристическую страховку EKTA для виз и путешествий?</h2>
+<section class="multi--form">
 
-    <div class="steps-container">
-        <svg class="steps-wave" viewBox="0 0 800 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 30C50 30 150 5 200 5C250 5 350 55 400 55C450 55 550 5 600 5C650 5 750 30 800 30" 
-                  stroke="#FFCC00" stroke-width="2" stroke-dasharray="0" />
-        </svg>
+<div class="page-wrapper">
+  <div class="form-card">
 
-        <div class="step-item">
-            <div class="step-number">1</div>
-            <div class="step-text">Рассчитайте точную стоимость полиса</div>
-        </div>
-
-        <div class="step-item">
-            <div class="step-number">2</div>
-            <div class="step-text">Правильно напишите ваши данные</div>
-        </div>
-
-        <div class="step-item">
-            <div class="step-number">3</div>
-            <div class="step-text">Проверьте личную информацию</div>
-        </div>
-
-        <div class="step-item">
-            <div class="step-number">4</div>
-            <div class="step-text">Оплатите полис любым удобным способом</div>
-        </div>
-
-        <div class="step-item">
-            <div class="step-number">5</div>
-            <div class="step-text">Получите полис на е-мейл и скачайте на смартфон</div>
-        </div>
+    <!-- STEPPER -->
+    <div class="stepper">
+      <div class="step active" data-step="1">
+        <div class="step-circle"><span class="step-num">1</span><svg class="step-check" viewBox="0 0 20 20"><polyline points="4,10 8,14 16,6"/></svg></div>
+        <div class="step-label">Країна і дати<br>поїздки</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="2">
+        <div class="step-circle"><span class="step-num">2</span><svg class="step-check" viewBox="0 0 20 20"><polyline points="4,10 8,14 16,6"/></svg></div>
+        <div class="step-label">Особиста<br>інформація</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="3">
+        <div class="step-circle"><span class="step-num">3</span><svg class="step-check" viewBox="0 0 20 20"><polyline points="4,10 8,14 16,6"/></svg></div>
+        <div class="step-label">Перевірка<br>інформації</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step" data-step="4">
+        <div class="step-circle"><span class="step-num">4</span><svg class="step-check" viewBox="0 0 20 20"><polyline points="4,10 8,14 16,6"/></svg></div>
+        <div class="step-label">Оплата<br>страховки</div>
+      </div>
     </div>
-    <div class="main-card">
 
-        <div class="stepper">
-            <div class="step active" id="st-1"><div class="circle">1</div><span>Страна и дати</span></div>
-            <div class="line"></div>
-            <div class="step" id="st-2"><div class="circle">2</div><span>Личная информация</span></div>
-            <div class="line"></div>
-            <div class="step" id="st-3"><div class="circle">3</div><span>Проверка</span></div>
-            <div class="line"></div>
-            <div class="step" id="st-4"><div class="circle">4</div><span>Оплата</span></div>
+    <!-- TARIFF TABS -->
+    <div class="tariff-tabs">
+      <button class="tariff-tab active" data-tariff="START">START</button>
+      <button class="tariff-tab" data-tariff="STANDART">STANDART</button>
+      <button class="tariff-tab" data-tariff="MAX">MAX</button>
+    </div>
+
+    <!-- ===== STEP 1 ===== -->
+    <div class="step-content active" id="step-1">
+      <div class="fields-row three-col">
+        <!-- DATE -->
+        <div class="field-group">
+          <label class="field-label">Дата подорожі</label>
+          <div class="input-wrap" id="date-wrap">
+            <input type="text" id="travel-dates" class="field-input" placeholder="Оберіть дати подорожі" readonly />
+            <span class="input-icon cal-icon">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </span>
+            <span class="input-status"></span>
+          </div>
+          <div class="field-error" id="date-error">Вкажіть дати початку та закінчення</div>
+          <label class="checkbox-label small-check">
+            <input type="checkbox" id="already-traveling" />
+            <span class="custom-check"></span>
+            Вже подорожую
+          </label>
         </div>
 
-        <form id="insuranceForm">
-            <div class="form-panel active" id="panel-1">
-                <div class="tariff-selector">
-                    <button type="button" class="t-btn active">START</button>
-                    <button type="button" class="t-btn">STANDART</button>
-                    <button type="button" class="t-btn">MAX</button>
-                </div>
-                <div class="input-grid--1">
-                    <div class="field-group">
-                        <label>Дата путешествия</label>
-                        <div class="calendar-wrapper">
-                            <input type="text" id="f_date" placeholder="Выберите даты" class="validate" readonly>
-                            <div class="cal-icon" id="cal-trigger"><img src="img/calendar-img.png" alt=""></div>
-                        </div>
-                    </div>
-                    <div class="booking--container">
-<div class="field--group validate__form" id="countries-select">
-    <label class="field--label">Країна подорожі</label>
-    <div class="field--input multiselect--trigger">
-        <span class="multiselect--placeholder">Укажите страну путешествия</span>
-        <img src="img/calendar-arrow.png" alt="arrow" class="field--arrow">
-    </div>
-    <div class="multiselect--dropdown">
-        <label class="multiselect--option"><input type="checkbox" value="Україна"> Україна</label>
-        <label class="multiselect--option"><input type="checkbox" value="Польща"> Польща</label>
-        <label class="multiselect--option"><input type="checkbox" value="Польща"> Румыния</label>
-        <label class="multiselect--option"><input type="checkbox" value="Польща"> Болгария</label>
-    </div>
-</div>
+        <!-- COUNTRY -->
+        <div class="field-group">
+          <label class="field-label">Країна подорожі</label>
+          <div class="input-wrap select-wrap" id="country-wrap">
+            <select id="travel-country" class="field-select" multiple>
+              <option value="">Вкажіть країну подорожі</option>
+              <option value="bulgaria">Болгарія</option>
+              <option value="romania">Румунія</option>
+              <option value="turkey">Туреччина</option>
+              <option value="egypt">Єгипет</option>
+              <option value="spain">Іспанія</option>
+              <option value="italy">Італія</option>
+              <option value="greece">Греція</option>
+              <option value="germany">Німеччина</option>
+              <option value="france">Франція</option>
+              <option value="poland">Польща</option>
+              <option value="czech">Чехія</option>
+              <option value="austria">Австрія</option>
+              <option value="usa">США</option>
+              <option value="uk">Велика Британія</option>
+              <option value="europe">Вся Європа (Шенген)</option>
+            </select>
+          </div>
+          <div class="field-error" id="country-error">Вкажіть одну або кілька країн</div>
+        </div>
 
-<div class="field--group validate__form" id="trip-type-select">
-    <label class="field--label">Тип отдыха</label>
-    <div class="select--wrapper field--input">
-        <input type="text" class="field--input__text" placeholder="Выберите тип отдыха" readonly>
-        <img src="img/calendar-arrow.png" alt="arrow" class="select--arrow">
-    </div>
-    <div class="select--dropdown">
-        <div class="select--option">Спокойный отдых</div>
-        <div class="select--option">Спорт</div>
-        <div class="select--option">Экстремальный отдых</div>
-        <div class="select--option">Студенческая страховка</div>
-        <div class="select--option">Рабочая страховка</div>
-    </div>
-</div>
-                    </div>
-                </div>
-                <div class="checkout--container">
-                  <div class="promo--wrapper">
-                    <label class="promo--label">
-                      <input type="checkbox" id="promo-toggle"  class="promo--checkbox">
-                      <span class="promo--text">У мене є промокод</span>
-                    </label>
+        <!-- REST TYPE -->
+        <div class="field-group">
+          <label class="field-label">Тип відпочинку</label>
+          <div class="input-wrap select-wrap" id="resttype-wrap">
+            <select id="rest-type" class="field-select">
+              <option value="">Оберіть тип відпочинку</option>
+              <option value="calm">Спокійний відпочинок</option>
+              <option value="sport">Спорт</option>
+              <option value="extreme">Екстремальний відпочинок</option>
+              <option value="student">Студентська страховка</option>
+              <option value="work">Робоча страховка</option>
+            </select>
+          </div>
+          <div class="field-error" id="resttype-error">Оберіть тип відпочинку</div>
+          <div class="field-hint" id="resttype-hint"><a href="#" class="link-hint">Детальніше</a></div>
+        </div>
+      </div>
 
-                    <div id="promo-field" class="promo--input-group" style="display: none;">
-                      <input type="text" class="promo--input" placeholder="Введіть промокод">
-                    </div>
-                  </div>
-
-                    <div class="promo--wrapper">
-                    <label class="promo--label">
-                      <input type="checkbox" id="promo-toggle"  class="promo--checkbox">
-                      <span class="promo--text">Уже путешествую</span>
-                    </label>
-
-                    <div id="promo-field" class="promo--input-group" style="display: none;">
-                      <input type="text" class="promo--input" placeholder="Введіть промокод">
-                    </div>
-                  </div>
-              
-                  <div class="toggle--wrapper">
-                    <label class="switch--container">
-                      <input type="checkbox" checked>
-                      <span class="switch--slider"></span>
-                    </label>
-                    <span class="switch--text">Страховий поліс на 1 рік (10 % знижка)</span>
-                  </div>
-                </div>
+      <!-- PROMO + YEARLY -->
+      <div class="promo-yearly-row">
+        <div class="promo-col">
+          <label class="checkbox-label">
+            <input type="checkbox" id="has-promo" />
+            <span class="custom-check"></span>
+            У мене є промокод
+          </label>
+          <div class="promo-input-wrap hidden" id="promo-wrap">
+            <div class="input-wrap" id="promo-field-wrap">
+              <input type="text" id="promo-code" class="field-input" placeholder="Введіть промокод" />
+              <span class="input-status"></span>
             </div>
+            <div class="field-error" id="promo-error">Промокод недійсний</div>
+          </div>
+        </div>
+        <div class="yearly-col">
+          <label class="toggle-label">
+            <span class="toggle-wrap">
+              <input type="checkbox" id="yearly-policy" />
+              <span class="toggle-slider"></span>
+            </span>
+            Страховий поліс на 1 рік (10% знижка)
+          </label>
+        </div>
+      </div>
 
-            <div class="form-panel" id="panel-2">
-                <div class="input-grid--2">
-                    <div class="field-group"><label>Имя</label><input type="text" placeholder="IVAN" class="validate latin validate-2" id="f_name"><div class="err-text">Только латиница</div></div>
-                    <div class="field-group"><label>Фамилия</label><input type="text" placeholder="IVANOV" class="validate latin validate-2" id="f_surname"><div class="err-text">Только латиница</div></div>
-                    <div class="field-group"><label>Дата рождения</label><input type="text" placeholder="ДД.ММ.РРРР" class="validate validate-2" id="f_dob"></div>
-                </div>
-                <div class="input-grid--2">
-                    <div class="field-group"><label>Паспорт</label><input type="text" placeholder="FA 000000" class="validate validate-2" id="f_pass"></div>
-                    <div class="field-group"><label>Телефон</label><input type="text" placeholder="+380..." class="validate validate-2"></div>
-                    <div class="field-group"><label>E-mail</label><input type="email" placeholder="mail@test.com" class="validate validate-2" id="f_email"></div>
-                </div>
-            </div>
-
-            <div class="form-panel" id="panel-3">
-                <div class="summary-cards">
-                    <div class="s-card">
-                        <h4>Общая информация</h4>
-                        <p>Даты: <span id="res_date">-</span></p>
-                        <p>Страна: <span id="res_country">-</span></p>
-                    </div>
-                    <div class="s-card">
-                        <h4>Покупатель</h4>
-                        <p>Имя: <span id="res_name">-</span></p>
-                        <p>Паспорт: <span id="res_pass">-</span></p>
-                    </div>
-                </div>
-                <table class="tourist-table">
-                    <thead><tr><th>№</th><th>Имя / Фамилия</th><th>Паспорт</th><th>Дата рождения</th></tr></thead>
-                    <tbody><tr><td>1</td><td id="res_full_name">-</td><td id="res_p_num">-</td><td id="res_dob_val">-</td></tr></tbody>
-                </table>
-            </div>
-
-            <div class="form-panel" id="panel-4">
-                <div class="pay-tabs">
-                    <button type="button" class="p-tab active" data-pay="card">КАРТА</button>
-                    <button type="button" class="p-tab" data-pay="apple">Apple Pay</button>
-                    <button type="button" class="p-tab" data-pay="google">Google Pay</button>
-                </div>
-                <div class="pay-view active" id="view-card">
-                    <div class="card-visual">
-                        <input type="text" placeholder="0000 0000 0000 0000" class="validate">
-                        <div class="card-row">
-                            <input type="text" placeholder="ММ/ГГ" class="validate" style="width:80px">
-                            <input type="text" placeholder="CVV" class="validate" style="width:80px">
-                        </div>
-                    </div>
-                </div>
-                <div class="pay-view" id="view-digital">
-                    <button type="button" class="fast-btn">Оплатить через <span id="fast-pay-name">G Pay</span></button>
-                </div>
-            </div>
-
-            <div class="footer">
-                <div class="price-box">
-                    Длительность: <b>14 днів</b><br>
-                    Итого: <b>140 UAH</b>
-                </div>
-                <div class="nav-right">
-                    <div class="agree-area--block" id="agree-area"style="margin-bottom:15px">
-                        <label><input class="agree_check-all" type="checkbox" id="agree_check"> Принимаю условия договора</label>
-                    </div>
-                    <div class="btns">
-                        <button type="button" id="btnBack" class="btn-back">Назад</button>
-                        <button type="button" id="btnNext" class="btn-next">Далее</button>
-                    </div>
-                </div>
-            </div>
-        </form>
+      <!-- BOTTOM BAR -->
+      <div class="bottom-bar">
+        <div class="price-info">
+          <div>Тривалість поїздки: <strong id="trip-duration">14 днів</strong></div>
+          <div>Підсумкова ціна: <strong id="total-price-1">140 UAH</strong></div>
+        </div>
+        <div class="bottom-actions">
+          <label class="checkbox-label">
+            <input type="checkbox" id="terms-1" />
+            <span class="custom-check"></span>
+            Приймаю умови договору
+          </label>
+          <div class="field-error inline-error" id="terms-1-error">Для продовження потрібна згода з умовами</div>
+          <button class="btn-primary" id="next-1">Далі</button>
+        </div>
+      </div>
     </div>
+
+    <!-- ===== STEP 2 ===== -->
+    <div class="step-content" id="step-2">
+
+      <!-- BUYER SECTION -->
+      <div class="section-card">
+        <div class="section-header">
+          <h3>Покупець</h3>
+          <p class="section-sub">Введіть ім'я та прізвище латиницею як у закордонному паспорті</p>
+        </div>
+        <div class="fields-row three-col">
+          <div class="field-group">
+            <label class="field-label">Ім'я</label>
+            <div class="input-wrap" id="fname-wrap">
+              <input type="text" id="buyer-fname" class="field-input" placeholder="Введіть ім'я" />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="fname-error">Введіть ім'я, використовуючи тільки букви латинського алфавіту без спецсимволів (Наприклад: IVAN)</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Прізвище</label>
+            <div class="input-wrap" id="lname-wrap">
+              <input type="text" id="buyer-lname" class="field-input" placeholder="Введіть прізвище" />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="lname-error">Введіть прізвище, використовуючи тільки букви латинського алфавіту без спецсимволів (Наприклад: IVANOV)</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Дата народження</label>
+            <div class="input-wrap" id="bdate-wrap">
+              <input type="text" id="buyer-bdate" class="field-input" placeholder="Введіть дату народження" readonly />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="bdate-error">Поле заповнено некоректно</div>
+          </div>
+        </div>
+        <div class="fields-row three-col">
+          <div class="field-group">
+            <label class="field-label">Паспорт</label>
+            <div class="input-wrap" id="passport-wrap">
+              <input type="text" id="buyer-passport" class="field-input" placeholder="Введіть № паспорта" />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="passport-error">Поле заповнено некоректно</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Номер телефону</label>
+            <div class="input-wrap phone-wrap" id="phone-wrap">
+              <span class="phone-flag">🇺🇦</span>
+              <input type="text" id="buyer-phone" class="field-input phone-input" placeholder="+380 XX XXX XXXX" />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="phone-error">Введіть коректний номер телефону</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Email</label>
+            <div class="input-wrap" id="email-wrap">
+              <input type="text" id="buyer-email" class="field-input" placeholder="Введіть e-mail" />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="email-error">Введіть коректну адресу електронної пошти</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOURISTS SECTION -->
+      <div class="section-card" id="tourists-section">
+        <div class="section-header">
+          <h3>Учасники поїздки</h3>
+        </div>
+        <div id="tourists-list"></div>
+        <button class="btn-add-tourist" id="add-tourist-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Додати туриста
+        </button>
+      </div>
+
+      <!-- EXTRA INSURANCE -->
+      <div class="section-card" id="extra-insurance-section">
+        <div class="section-header">
+          <h3>Рекомендуємо включити до полісу додаткове страхування</h3>
+        </div>
+        <div class="extra-row">
+          <div class="extra-options">
+            <label class="extra-option">
+              <input type="checkbox" class="extra-check" data-price="325" data-key="accident" />
+              <span class="extra-custom-check"></span>
+              <div class="extra-info">
+                <span class="extra-title">Нещасний випадок <strong>(+325 UAH)</strong>
+                  <span class="info-icon" data-tooltip="Компенсація при тяжкій шкоді здоров'ю або житті в результаті нещасного випадку під час поїздки на суму до 10 000 у.е.">ⓘ</span>
+                </span>
+                <span class="extra-desc">Компенсація при тяжкій шкоді здоров'ю або житті в результаті нещасного випадку під час поїздки на суму до 10 000 у.е.</span>
+              </div>
+            </label>
+            <label class="extra-option">
+              <input type="checkbox" class="extra-check" data-price="255" data-key="baggage" />
+              <span class="extra-custom-check"></span>
+              <div class="extra-info">
+                <span class="extra-title">Втрата багажу <strong>(+255 UAH)</strong>
+                  <span class="info-icon" data-tooltip="Страхуємо до 1 000 у.е. на випадок втрати або затримки багажу">ⓘ</span>
+                </span>
+                <span class="extra-desc">Страхуємо до 1 000 у.е. на випадок втрати або затримки багажу</span>
+              </div>
+            </label>
+            <label class="extra-option">
+              <input type="checkbox" class="extra-check" data-price="325" data-key="alcohol" />
+              <span class="extra-custom-check"></span>
+              <div class="extra-info">
+                <span class="extra-title">Алкоголь <strong>(+325 UAH)</strong>
+                  <span class="info-icon" data-tooltip="Покриємо медичні витрати на лікування, навіть якщо травма отримана в стані алкогольного сп'яніння">ⓘ</span>
+                </span>
+                <span class="extra-desc">Покриємо медичні витрати на лікування, навіть якщо травма отримана в стані алкогольного сп'яніння</span>
+              </div>
+            </label>
+            <label class="extra-option">
+              <input type="checkbox" class="extra-check" data-price="255" data-key="coverage100" />
+              <span class="extra-custom-check"></span>
+              <div class="extra-info">
+                <span class="extra-title">Страхова сума 100 000 USD <strong>(+255 UAH)</strong>
+                  <span class="info-icon" data-tooltip="Розширений пакет страхової компенсації на суму до 100 000 USD">ⓘ</span>
+                </span>
+                <span class="extra-desc">Розширений пакет страхової компенсації на суму до 100 000 USD</span>
+              </div>
+            </label>
+          </div>
+          <div class="insurance-details-box">
+            <div class="detail-title">Деталі страховки:</div>
+            <ul id="insurance-detail-list">
+              <li id="detail-country">—</li>
+              <li id="detail-dates">—</li>
+            </ul>
+            <div class="detail-title mt-8">До страховки включено:</div>
+            <ul>
+              <li>50 000 USD (Без франшизи)</li>
+              <li id="detail-resttype">Звичайний відпочинок</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="price-info">
+          <div>Тривалість поїздки: <strong id="trip-duration-2">14 днів</strong></div>
+          <div>Підсумкова ціна: <strong id="total-price-2">140 UAH</strong></div>
+        </div>
+        <div class="bottom-actions">
+          <button class="btn-secondary" id="back-2">Назад</button>
+          <button class="btn-primary" id="next-2">Далі</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 3 ===== -->
+    <div class="step-content" id="step-3">
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-card-title">Загальна інформація</div>
+          <div class="review-row"><span>Дати поїздки:</span><strong id="rev-dates">—</strong></div>
+          <div class="review-row"><span>Тариф:</span><strong id="rev-tariff">—</strong></div>
+          <div class="review-row"><span>Країна:</span><strong id="rev-country">—</strong></div>
+        </div>
+        <div class="review-card">
+          <div class="review-card-title">Покупець</div>
+          <div class="review-row"><span>Ім'я:</span><strong id="rev-fname">—</strong></div>
+          <div class="review-row"><span>Прізвище:</span><strong id="rev-lname">—</strong></div>
+          <div class="review-row"><span>Дата народження:</span><strong id="rev-bdate">—</strong></div>
+          <div class="review-row"><span>Паспорт:</span><strong id="rev-passport">—</strong></div>
+          <div class="review-row"><span>Email:</span><strong id="rev-email">—</strong></div>
+          <div class="review-row"><span>Телефон:</span><strong id="rev-phone">—</strong></div>
+        </div>
+      </div>
+
+      <div class="section-card" id="rev-tourists-section">
+        <div class="section-header"><h3>Учасники поїздки</h3></div>
+        <table class="tourists-table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Ім'я / Прізвище</th>
+              <th>Паспорт</th>
+              <th>Дата народження</th>
+            </tr>
+          </thead>
+          <tbody id="rev-tourists-list"></tbody>
+        </table>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="price-info">
+          <div>Тривалість поїздки: <strong id="trip-duration-3">14 днів</strong></div>
+          <div>Підсумкова ціна: <strong id="total-price-3">140 UAH</strong></div>
+        </div>
+        <div class="bottom-actions">
+          <button class="btn-secondary" id="back-3">Назад</button>
+          <button class="btn-primary" id="next-3">Оплатити</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STEP 4 ===== -->
+    <div class="step-content" id="step-4">
+      <div class="payment-tabs">
+        <button class="payment-tab active" data-payment="card">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          КАРТА
+        </button>
+        <button class="payment-tab" data-payment="apple">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Pay
+        </button>
+        <button class="payment-tab" data-payment="google">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Pay
+        </button>
+      </div>
+
+      <!-- CARD FORM -->
+      <div class="payment-content active" id="payment-card">
+        <div class="card-visual">
+          <div class="card-front">
+            <div class="card-chip">
+              <svg viewBox="0 0 40 40" width="40" height="40"><rect width="40" height="30" rx="4" fill="#d4a843"/><rect x="10" y="0" width="20" height="30" rx="2" fill="none" stroke="#b8972a" stroke-width="1"/><line x1="0" y1="10" x2="40" y2="10" stroke="#b8972a" stroke-width="1"/><line x1="0" y1="20" x2="40" y2="20" stroke="#b8972a" stroke-width="1"/><line x1="20" y1="0" x2="20" y2="30" stroke="#b8972a" stroke-width="1"/></svg>
+            </div>
+            <div class="card-number-display" id="card-num-display">•••• •••• •••• ••••</div>
+            <div class="card-bottom-row">
+              <div class="card-expiry-display" id="card-exp-display">MM/YY</div>
+              <div class="card-logo">
+                <svg viewBox="0 0 50 30" width="50" height="30"><circle cx="19" cy="15" r="12" fill="#eb001b"/><circle cx="31" cy="15" r="12" fill="#f79e1b"/><path d="M25 6.4a12 12 0 0 1 0 17.2A12 12 0 0 1 25 6.4z" fill="#ff5f00"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-fields">
+          <div class="field-group full-width">
+            <label class="field-label">Номер картки</label>
+            <div class="input-wrap" id="cardnum-wrap">
+              <input type="text" id="card-number" class="field-input" placeholder="0000 0000 0000 0000" maxlength="19" />
+              <span class="input-status"></span>
+            </div>
+            <div class="field-error" id="cardnum-error">Введіть коректний номер картки</div>
+          </div>
+          <div class="fields-row two-col">
+            <div class="field-group">
+              <label class="field-label">Термін дії</label>
+              <div class="input-wrap" id="cardexp-wrap">
+                <input type="text" id="card-expiry" class="field-input" placeholder="MM/YY" maxlength="5" />
+                <span class="input-status"></span>
+              </div>
+              <div class="field-error" id="cardexp-error">Введіть коректну дату</div>
+            </div>
+            <div class="field-group">
+              <label class="field-label">CVV / CVC</label>
+              <div class="input-wrap" id="cardcvv-wrap">
+                <input type="text" id="card-cvv" class="field-input" placeholder="•••" maxlength="3" />
+                <span class="input-status"></span>
+              </div>
+              <div class="field-error" id="cardcvv-error">Введіть CVV код</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPLE PAY -->
+      <div class="payment-content" id="payment-apple">
+        <div class="pay-button-container">
+          <button class="apple-pay-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Оплатити через Apple Pay
+          </button>
+        </div>
+      </div>
+
+      <!-- GOOGLE PAY -->
+      <div class="payment-content" id="payment-google">
+        <div class="pay-button-container">
+          <button class="google-pay-btn">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Оплатити через Google Pay
+          </button>
+        </div>
+      </div>
+
+      <div class="bottom-bar">
+        <div class="price-info">
+          <div>Підсумкова ціна: <strong id="total-price-4">140 UAH</strong></div>
+        </div>
+        <div class="bottom-actions">
+          <button class="btn-secondary" id="back-4">Назад</button>
+          <button class="btn-primary pay-submit" id="pay-btn">Оплатити</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="secure-badge">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v5c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7z"/></svg>
+    WEBSITE SECURE
+    <span class="secure-sub">Secure 256-bit SSL Encryption</span>
+  </div>
 </div>
 
 </section>
+
+
+
 <section class="benefits">
     <div class="benefits--container">
         <h2 class="benefits--title">Почему выбирают<br> страховую компанию EKTA?</h2>
@@ -1960,9 +2212,11 @@
     </div>
 </footer>
 
-
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/flatpickr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.13/l10n/uk.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
