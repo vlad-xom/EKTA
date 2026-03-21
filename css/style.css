@@ -3,7 +3,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --primary: #1a6f8a;
+  --primary: #00496B;
   --primary-dark: #145a72;
   --primary-light: #e8f4f8;
   --accent: #1a6f8a;
@@ -16,7 +16,7 @@
   --neutral: #6b7280;
   --bg: #f0f4f7;
   --white: #ffffff;
-  --border: #d1d9e0;
+  --border: #00608E;
   --text: #1e2a38;
   --text-light: #6b7280;
   --radius: 15px;
@@ -181,14 +181,12 @@
   border: 2px solid var(--border-color);
   border-radius: var(--radius);
   font-size: 16px;
-  color: var(--text);
-  background: var(--white);
+  color: var(--off-color-text);
   outline: none;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
   background-color: var(--bg-input);
 }
 .field-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,111,138,0.10); }
-.field-input::placeholder { color: #b0bac5; }
 
 /* INPUT STATUS ICON */
 .input-status {
@@ -259,7 +257,8 @@
   border: 2px solid var(--border) !important;
   border-radius: var(--radius) !important;
   font-size: 16px !important;
-  background: var(--white) !important;
+  background: var(--bg-input) !important;
+  height: 55px;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   line-height: 28px !important;
@@ -740,12 +739,32 @@
 .flatpickr-current-month .flatpickr-monthDropdown-months { color: #fff !important; background: var(--primary) !important; }
 .flatpickr-prev-month, .flatpickr-next-month { color: #fff !important; fill: #fff !important; }
 
-
-
-
 .select2-search__field {
-  width: 200px;
+  width: 200px !important;
+  margin: 0 !important;
+}
+
+.select2-selection__rendered {
+  padding-left: 23px !important;
+  display: flex;
+  padding-top: 11px;
+}
+.select2-container .select2-selection--multiple {
+  min-height: max-content !important;
+}
+.select2-container--default .select2-selection--multiple,
+.select2-search__field{
+  cursor: pointer !important;
 }
 .select2-selection {
-  background-color: var(--bg-input) !important;
+  height: 55px !important;
+}
+.select2-search {
+  padding-top: 14px;
+}
+.select2-selection__placeholder {
+  color: var(--off-color-text) !important;
+}
+.select2-results__options {
+  border-radius: 15px;
 }
