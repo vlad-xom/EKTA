@@ -208,8 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.step-line').forEach((line, i) => {
       line.classList.toggle('done', i+1 < n);
     });
-    state.currentStep = n;
-    window.scrollTo({top:0, behavior:'smooth'});
   }
 
   /* ---- STEP 1 LOGIC ---- */
