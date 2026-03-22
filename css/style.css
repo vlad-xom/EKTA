@@ -46,7 +46,7 @@
 .form-card {
   background: var(--white);
   border-radius: 18px;
-  box-shadow: var(--shadow);
+  box-shadow: 0px 0px 20px 20px rgba(26, 111, 138, 0.10);
   padding: 36px 40px 32px;
   margin-bottom: 12px;
 }
@@ -115,6 +115,7 @@
   gap: 27px;
   justify-content: center;
   margin-bottom: 70px;
+  padding-top: 30px;
 }
 .tariff-tab {
   padding: 20px 55px;
@@ -391,7 +392,8 @@
 }
 .price-info {
   width: 355px;
-  background: #00699B;
+  margin-top: 50px;
+  background-color: var(--main-color);
   color: #fff;
   border-radius: 15px;
   padding: 25px 28px;
@@ -402,22 +404,23 @@
 .price-info strong { font-weight: 800; }
 .bottom-actions {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 14px;
-  flex-wrap: wrap;
+  width: 100%;
 }
 .inline-error { display: none; font-size: 0.76rem; color: var(--error); font-weight: 600; }
 .inline-error.show { display: block; }
 
 /* BUTTONS */
 .btn-primary {
-  background: var(--primary-dark);
+  background: var(--main-color);
   color: #fff;
   border: none;
   border-radius: 15px;
   padding: 25px 43px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  transition: all 0.5s ease;
   font-family: Open Sans;
   font-weight: 600;
   font-size: 34px;
@@ -425,24 +428,23 @@
   letter-spacing: 0%;
   text-align: center;
   vertical-align: middle;
+  border: 2px solid var(--main-color);
 }
 .btn-primary:hover { 
-  background: var(--main-color); 
+  background: var(--white);
+  color: var(--main-color); 
 }
 .btn-primary:active { transform: translateY(0); }
 .btn-secondary {
   background: transparent;
   color: var(--primary);
-  border: 2px solid var(--primary);
   border-radius: 10px;
   padding: 10px 28px;
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.95rem;
+  font-size: 30px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s;
 }
-.btn-secondary:hover { background: var(--primary-light); }
 
 /* SECTION CARD */
 .section-card {
@@ -808,8 +810,11 @@ html, body { overflow-x: hidden; max-width: 100%; }
 
 /* 1280px */
 @media (max-width: 1280px) {
-  .page-wrapper { max-width: 860px; }
+  .page-wrapper { max-width: 990px;
+  margin-bottom: 50px; 
+  }
   .form-card { padding: 36px 36px 30px; }
+  
 }
 
 /* 1024px */
@@ -818,6 +823,24 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .form-card { padding: 28px 28px 24px; }
   .tariff-tab { padding: 10px 26px; }
   .card-front { width: 300px; height: 180px; }
+  .fields-row {
+    display: block;
+  }
+  .field-group {
+    margin-bottom: 30px;
+  }
+  .field-label {
+    margin-bottom: 10px;
+  }
+  .price-info {
+    width: 100%;
+  }
+  .tourist-fields {
+    display: block;
+  }
+  .fields-row {
+    margin-bottom: 0;
+  }
 }
 
 /* 768px */
@@ -828,7 +851,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .step-circle { width: 36px; height: 36px; font-size: 0.9rem; }
   .step-label { font-size: 0.65rem; max-width: 64px; white-space: normal; }
   .step-line { min-width: 14px; }
-  .tariff-tab { padding: 9px 20px; font-size: 0.88rem; }
+  .tariff-tab { padding: 15px 32px; font-size: 0.88rem; }
   .three-col { grid-template-columns: 1fr 1fr; }
   .two-col { grid-template-columns: 1fr 1fr; }
   .extra-row { grid-template-columns: 1fr; gap: 16px; }
@@ -844,7 +867,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .page-wrapper { width: 100%; max-width: 100%; overflow-x: hidden; }
 
   .form-card {
-    border-radius: 12px;
+    border-radius: 33px;
     box-shadow: var(--shadow);
     padding: 0;
     margin: 10px 10px 24px;
@@ -891,7 +914,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .three-col { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
   .fields-row { gap: 10px; margin-bottom: 10px; }
-  .field-input { font-size: 0.88rem; padding: 11px 36px 11px 12px; }
+  .field-input { font-size: 0.88rem; }
   .field-label { font-size: 0.8rem; }
   .field-error { font-size: 0.72rem; }
 
@@ -970,7 +993,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
   }
   .review-card-title { font-size: 0.85rem; margin-bottom: 10px; }
   .review-row { font-size: 0.82rem; justify-content: space-between; margin-bottom: 6px; }
-  .review-row strong { text-align: right; max-width: 55%; }
+  .review-row strong { text-align: right; }
   #rev-tourists-section { border-radius: 0; border-left: none; border-right: none; padding: 14px 0; }
   .tourists-table { font-size: 0.76rem; }
   .tourists-table th, .tourists-table td { padding: 7px 4px; }
@@ -1014,10 +1037,52 @@ html, body { overflow-x: hidden; max-width: 100%; }
   /* Flatpickr */
   .flatpickr-calendar {
     width: calc(100vw - 20px) !important;
-    max-width: 340px !important;
+    max-width: 310px !important;
   }
 
   .secure-badge { padding: 10px 0 6px; font-size: 0.7rem; }
+  .form-card {
+    padding: 20px;
+  }
+  .tariff-tabs {
+    margin-bottom: 53px;
+  }
+  .bottom-bar {
+    padding: 0;
+  }
+  .bottom-actions {
+    display: block;
+  }
+  .bottom-actions .checkbox-label {
+    margin-bottom: 25px;
+  }
+  .inline-error.show {
+    margin-bottom: 10px;
+  }
+  .btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 51px;
+    margin: 0 auto;
+    font-family: Open Sans;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+
+  }
+}
+@media (max-width: 520px) {
+      .tariff-tab {
+        padding: 13px 20px;
+        gap: 15px;
+      }
+      .tariff-tabs {
+        gap: 10px;
+}
 }
 
 /* 375px */
@@ -1026,7 +1091,6 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .step-inner { padding: 12px 12px 0; }
   .mobile-tariff { padding: 12px 12px 8px; }
   .mobile-step-header { font-size: 0.88rem; padding: 12px 14px; }
-  .mobile-tariff .tariff-tab { font-size: 0.84rem; padding: 10px 12px; }
   .field-input { font-size: 0.84rem; }
   .btn-primary { padding: 10px 16px; font-size: 0.85rem; }
   .btn-secondary { padding: 9px 14px; font-size: 0.82rem; }
@@ -1036,5 +1100,4 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .card-front { height: 160px; padding: 16px 18px; }
   .card-number-display { font-size: 0.9rem; }
   .tourists-table { font-size: 0.7rem; }
-  .flatpickr-calendar { max-width: calc(100vw - 16px) !important; }
 }

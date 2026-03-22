@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mode: 'range',
     dateFormat: 'd.m.Y',
     minDate: today,
-    locale: 'uk',
+    locale: 'ru',
     onChange(dates) {
       if (dates.length === 2) {
         state.startDate = dates[0];
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Buyer birthdate picker (no minDate restriction — past dates)
+  // Buyer birthdate picker
   const fpBdate = flatpickr('#buyer-bdate', {
     dateFormat: 'd.m.Y',
     maxDate: today,
-    locale: 'uk',
+    locale: 'ru',
     onChange(dates) {
       if (dates.length) {
         state.buyer.bdate = dates[0];
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- SELECT2 ---- */
   $('#travel-country').select2({
-    placeholder: 'Вкажіть країну подорожі',
+    placeholder: 'Выберите страну',
     allowClear: true,
     width: '100%',
   }).on('change', function() {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   $('#rest-type').select2({
-    placeholder: 'Оберіть тип відпочинку',
+    placeholder: 'Выберите тип отдыха',
     allowClear: true,
     width: '100%',
   }).on('change', function() {
@@ -149,11 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const days = state.tripDays;
     const base = state.basePrice * (days / 14);
     const total = Math.round(base + state.extraPrice);
-    document.getElementById('trip-duration').textContent = days + ' днів';
+    document.getElementById('trip-duration').textContent = days + ' дней';
     document.getElementById('total-price-1').textContent = total + ' UAH';
-    document.getElementById('trip-duration-2').textContent = days + ' днів';
+    document.getElementById('trip-duration-2').textContent = days + ' дней';
     document.getElementById('total-price-2').textContent = total + ' UAH';
-    document.getElementById('trip-duration-3').textContent = days + ' днів';
+    document.getElementById('trip-duration-3').textContent = days + ' дней';
     document.getElementById('total-price-3').textContent = total + ' UAH';
     document.getElementById('total-price-4').textContent = total + ' UAH';
   }
@@ -162,21 +162,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const countryEl = document.getElementById('detail-country');
     const datesEl = document.getElementById('detail-dates');
     const rtEl = document.getElementById('detail-resttype');
-    // Countries
     const countryTexts = state.countries.map(v => {
       const opt = document.querySelector(`#travel-country option[value="${v}"]`);
       return opt ? opt.textContent : v;
     });
     countryEl.textContent = countryTexts.join(', ') || '—';
-    // Dates
     if (state.startDate && state.endDate) {
       datesEl.textContent = formatDate(state.startDate) + ' – ' + formatDate(state.endDate);
     } else {
       datesEl.textContent = '—';
     }
-    // Rest type
     const rtOpt = document.querySelector(`#rest-type option[value="${state.restType}"]`);
-    rtEl.textContent = rtOpt ? rtOpt.textContent : 'Звичайний відпочинок';
+    rtEl.textContent = rtOpt ? rtOpt.textContent : 'Обычный отдых';
   }
 
   function formatDate(d) {
@@ -244,22 +241,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('next-1').addEventListener('click', () => {
     let ok = true;
-    // Validate dates
     if (!state.startDate || !state.endDate) {
       setValid('date-wrap', 'date-error', false, true);
       ok = false;
     }
-    // Validate country
     if (!state.countries.length) {
       setValid('country-wrap', 'country-error', false, true);
       ok = false;
     }
-    // Validate rest type
     if (!state.restType) {
       setValid('resttype-wrap', 'resttype-error', false, true);
       ok = false;
     }
-    // Terms
     const terms = document.getElementById('terms-1');
     const termsErr = document.getElementById('terms-1-error');
     if (!terms.checked) {
@@ -291,11 +284,9 @@ document.addEventListener('DOMContentLoaded', () => {
   liveValidate(buyerPhone, 'phone-wrap', 'phone-error', v => validPhone(v));
   liveValidate(buyerEmail, 'email-wrap', 'email-error', v => validEmail(v));
 
-  // Force uppercase for names
   buyerFname.addEventListener('input', () => { buyerFname.value = buyerFname.value.toUpperCase(); });
   buyerLname.addEventListener('input', () => { buyerLname.value = buyerLname.value.toUpperCase(); });
 
-  // Phone format
   buyerPhone.addEventListener('input', function() {
     let v = this.value.replace(/[^\d+\s\-()]/g,'');
     this.value = v;
@@ -312,32 +303,32 @@ document.addEventListener('DOMContentLoaded', () => {
     card.innerHTML = `
       <div class="tourist-card-header">
         <span class="tourist-title">Турист № ${index}</span>
-        <button class="tourist-remove" title="Видалити">✕</button>
+        <button class="tourist-remove" title="Удалить">✕</button>
       </div>
       <div class="tourist-fields">
         <div class="field-group">
-          <label class="field-label">Ім'я</label>
+          <label class="field-label">Имя</label>
           <div class="input-wrap" id="t-fname-wrap-${id}">
-            <input type="text" class="field-input t-fname" placeholder="Ім'я" data-tid="${id}" />
+            <input type="text" class="field-input t-fname" placeholder="Имя" data-tid="${id}" />
             <span class="input-status"></span>
           </div>
-          <div class="field-error" id="t-fname-err-${id}">Тільки латинські літери</div>
+          <div class="field-error" id="t-fname-err-${id}">Только латинские буквы</div>
         </div>
         <div class="field-group">
-          <label class="field-label">Прізвище</label>
+          <label class="field-label">Фамилия</label>
           <div class="input-wrap" id="t-lname-wrap-${id}">
-            <input type="text" class="field-input t-lname" placeholder="Прізвище" data-tid="${id}" />
+            <input type="text" class="field-input t-lname" placeholder="Фамилия" data-tid="${id}" />
             <span class="input-status"></span>
           </div>
-          <div class="field-error" id="t-lname-err-${id}">Тільки латинські літери</div>
+          <div class="field-error" id="t-lname-err-${id}">Только латинские буквы</div>
         </div>
         <div class="field-group">
-          <label class="field-label">Дата народження</label>
+          <label class="field-label">Дата рождения</label>
           <div class="input-wrap" id="t-bdate-wrap-${id}">
-            <input type="text" class="field-input t-bdate" placeholder="ДД.ММ.РРРР" data-tid="${id}" readonly />
+            <input type="text" class="field-input t-bdate" placeholder="ДД.ММ.ГГГГ" data-tid="${id}" readonly />
             <span class="input-status"></span>
           </div>
-          <div class="field-error" id="t-bdate-err-${id}">Невірна дата</div>
+          <div class="field-error" id="t-bdate-err-${id}">Неверная дата</div>
         </div>
         <div class="field-group">
           <label class="field-label">Паспорт</label>
@@ -345,19 +336,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <input type="text" class="field-input t-passport" placeholder="№ паспорта" data-tid="${id}" />
             <span class="input-status"></span>
           </div>
-          <div class="field-error" id="t-passport-err-${id}">Введіть номер паспорта</div>
+          <div class="field-error" id="t-passport-err-${id}">Введите номер паспорта</div>
         </div>
       </div>
     `;
-    // Tourist in state
     state.tourists.push({ id, fname: '', lname: '', bdate: '', passport: '' });
 
-    // Flatpickr for tourist bdate
     const bdInput = card.querySelector('.t-bdate');
     flatpickr(bdInput, {
       dateFormat: 'd.m.Y',
       maxDate: today,
-      locale: 'uk',
+      locale: 'ru',
       onChange(dates) {
         if (dates.length) {
           const t = state.tourists.find(t => t.id === id);
@@ -367,7 +356,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Live validate tourist fields
     const fnameEl = card.querySelector('.t-fname');
     const lnameEl = card.querySelector('.t-lname');
     const passEl  = card.querySelector('.t-passport');
@@ -388,7 +376,6 @@ document.addEventListener('DOMContentLoaded', () => {
     touristLiveVal(lnameEl,  `t-lname-wrap-${id}`,   `t-lname-err-${id}`,   latinName,    'lname');
     touristLiveVal(passEl,   `t-passport-wrap-${id}`,`t-passport-err-${id}`,validPassport,'passport');
 
-    // Remove
     card.querySelector('.tourist-remove').addEventListener('click', () => {
       state.tourists = state.tourists.filter(t => t.id !== id);
       card.remove();
@@ -414,7 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.extra-check').forEach(chk => {
     chk.addEventListener('change', function() {
       const key = this.dataset.key;
-      const price = parseInt(this.dataset.price);
       state.extras[key] = this.checked;
       state.extraPrice = Object.entries(state.extras).reduce((sum, [k, v]) => {
         const el = document.querySelector(`.extra-check[data-key="${k}"]`);
@@ -434,14 +420,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const email = buyerEmail.value.trim();
     const bdate = document.getElementById('buyer-bdate').value;
 
-    if (!latinName(fname))    { setValid('fname-wrap','fname-error',false,true); ok=false; }
-    if (!latinName(lname))    { setValid('lname-wrap','lname-error',false,true); ok=false; }
-    if (!bdate)               { setValid('bdate-wrap','bdate-error',false,true); ok=false; }
+    if (!latinName(fname))        { setValid('fname-wrap','fname-error',false,true); ok=false; }
+    if (!latinName(lname))        { setValid('lname-wrap','lname-error',false,true); ok=false; }
+    if (!bdate)                   { setValid('bdate-wrap','bdate-error',false,true); ok=false; }
     if (!validPassport(passport)) { setValid('passport-wrap','passport-error',false,true); ok=false; }
-    if (!validPhone(phone))   { setValid('phone-wrap','phone-error',false,true); ok=false; }
-    if (!validEmail(email))   { setValid('email-wrap','email-error',false,true); ok=false; }
+    if (!validPhone(phone))       { setValid('phone-wrap','phone-error',false,true); ok=false; }
+    if (!validEmail(email))       { setValid('email-wrap','email-error',false,true); ok=false; }
 
-    // Validate tourists
     state.tourists.forEach(t => {
       const card = document.querySelector(`.tourist-card[data-tid="${t.id}"]`);
       if (!card) return;
@@ -480,11 +465,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('rev-email').textContent = state.buyer.email;
     document.getElementById('rev-phone').textContent = state.buyer.phone;
 
-    // Tourists table
     const tbody = document.getElementById('rev-tourists-list');
     tbody.innerHTML = '';
     if (!state.tourists.length) {
-      tbody.innerHTML = '<tr><td colspan="4" style="color:#aaa;text-align:center;padding:12px">Учасників не додано</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="4" style="color:#aaa;text-align:center;padding:12px">Участников не добавлено</td></tr>';
       return;
     }
     state.tourists.forEach((t, i) => {
@@ -516,7 +500,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('back-4').addEventListener('click', () => goToStep(3));
 
-  // Card number formatting & live preview
   const cardNumEl = document.getElementById('card-number');
   const cardExpEl = document.getElementById('card-expiry');
   const cardCvvEl = document.getElementById('card-cvv');
@@ -568,9 +551,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="width:72px;height:72px;background:#2da44e;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;box-shadow:0 4px 20px rgba(45,164,78,0.3)">
           <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#fff" stroke-width="3"><polyline points="5,12 10,17 19,7"/></svg>
         </div>
-        <h2 style="font-size:1.5rem;font-weight:800;color:#1e2a38;margin-bottom:12px">Оплата успішна!</h2>
-        <p style="color:#6b7280;font-size:0.95rem;font-weight:600">Ваш страховий поліс оформлено.<br>Деталі відправлено на email: <strong style="color:#1a6f8a">${state.buyer.email || '—'}</strong></p>
-        <button onclick="location.reload()" style="margin-top:32px;background:#1a6f8a;color:#fff;border:none;border-radius:10px;padding:12px 36px;font-family:inherit;font-size:1rem;font-weight:800;cursor:pointer">Нова заявка</button>
+        <h2 style="font-size:1.5rem;font-weight:800;color:#1e2a38;margin-bottom:12px">Оплата успешна!</h2>
+        <p style="color:#6b7280;font-size:0.95rem;font-weight:600">Ваш страховой полис оформлен.<br>Детали отправлены на email: <strong style="color:#1a6f8a">${state.buyer.email || '—'}</strong></p>
+        <button onclick="location.reload()" style="margin-top:32px;background:#1a6f8a;color:#fff;border:none;border-radius:10px;padding:12px 36px;font-family:inherit;font-size:1rem;font-weight:800;cursor:pointer">Новая заявка</button>
       </div>
     `;
   }
