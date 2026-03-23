@@ -559,20 +559,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---- TOOLTIP ---- */
-  const tooltip = document.getElementById('global-tooltip');
-  document.addEventListener('mouseover', e => {
-    const icon = e.target.closest('.info-icon');
-    if (!icon || !icon.dataset.tooltip) return;
-    tooltip.textContent = icon.dataset.tooltip;
-    tooltip.classList.add('show');
-  });
-  document.addEventListener('mousemove', e => {
-    tooltip.style.left = (e.clientX + 12) + 'px';
-    tooltip.style.top  = (e.clientY - 8) + 'px';
-  });
-  document.addEventListener('mouseout', e => {
-    if (e.target.closest('.info-icon')) tooltip.classList.remove('show');
-  });
+const tooltip = document.getElementById('global-tooltip');
+
+  if (tooltip) {
+    document.addEventListener('mouseover', e => {
+      const icon = e.target.closest('.info-icon');
+      if (!icon || !icon.dataset.tooltip) return;
+      tooltip.textContent = icon.dataset.tooltip;
+      tooltip.classList.add('show');
+    });
+    document.addEventListener('mousemove', e => {
+      tooltip.style.left = (e.clientX + 12) + 'px';
+      tooltip.style.top  = (e.clientY - 8) + 'px';
+    });
+    document.addEventListener('mouseout', e => {
+      if (e.target.closest('.info-icon')) tooltip.classList.remove('show');
+    });
+  }
 
   /* ---- INIT ---- */
   updatePrices();

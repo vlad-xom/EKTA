@@ -44,17 +44,16 @@ font-family: "Roboto", sans-serif;
 /*Open-sans
 font-family: "Open Sans", sans-serif;
 */
-body.no-scroll {
-    overflow: hidden;
-    height: 100vh; /* Фіксуємо висоту екрану */
-}
+
+
 .hero--section {
     background: var(--gradient--header);
 }
 .hero--section {
     width: 100%;
-    height: 100vh;      /* Запасний варіант для старих браузерів */
-    height: 100dvh;     /* Динамічна висота для сучасних мобільних пристроїв */
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
 }
 
 .header--menu {
@@ -792,7 +791,6 @@ body.no-scroll {
 
     .how-img-left, .how-img-right {
       flex-shrink: 0;
-      width: 160px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2834,3 +2832,6 @@ body.no-scroll {
         height: 41px;
     }
 }
+
+
+
